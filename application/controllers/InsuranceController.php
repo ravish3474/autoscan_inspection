@@ -40,6 +40,19 @@ class InsuranceController extends CI_Controller {
     	}
     }
 
+    public function fetch_agent_by_branch(){
+    	$branch_id = $this->input->post('branch_id');
+    	$table = "agents";
+    	$condition = array('branch_id'=>$branch_id);
+    	$data = $this->CommonModel->fetch_data($table,$condition);
+    	if ($data) {
+    		die(json_encode(array('status'=>'1','data'=>$data)));
+    	}
+    	else{
+    		die(json_encode(array('status'=>'0','msg'=>'Something Went Wrong')));
+    	}
+    }
+
     public function viewBranch(){
     	$table = 'insurance_companies';
     	$table2 = $table;

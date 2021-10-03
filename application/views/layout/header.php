@@ -170,6 +170,12 @@ label{
                         </a>
                     </li>
                     <li>
+                        <a href="<?=base_url('manage-field-executive')?>">
+                        <i class="fa fa-user"></i>
+                            <span>Manage FE</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?=base_url('agents')?>">
                         <i class="fa fa-user"></i>
                             <span>Mange Agents</span>

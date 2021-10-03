@@ -12,6 +12,9 @@ class CasesController extends CI_Controller {
     public function index(){
     	$table = "insurance_companies";
 		$data['companies'] = $this->CommonModel->fetch_data($table); 
+        $table = "coordinators";
+        $condition = "admin_id <> ".$_SESSION['user_data'][0]['admin_id'];
+        $data['c_nator'] = $this->CommonModel->fetch_data($table,$condition); 
     	$this->load->view('layout/header');
 		$this->load->view('intimation_form',$data);
 		$this->load->view('layout/footer');

@@ -9,6 +9,12 @@ class HomeController extends CI_Controller {
 			$this->load->view('layout/footer');
 	}
 
+	public function worksheet(){
+		$this->load->view('layout/header');
+		$this->load->view('worksheet');
+		$this->load->view('layout/footer');
+	}
+
 	public function cases()
 	{
 		$this->load->view('layout/header');
