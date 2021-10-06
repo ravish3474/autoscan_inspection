@@ -149,13 +149,13 @@
                                                 <label class="col-md-6">Payment Method <sup class="text-danger">*</sup></label>
                                                 <div class="col-md-6">
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method" checked>CASH</label>
+                                                        <label><input type="radio" name="payment_method" value="CASH" checked>CASH</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method">CREDIT CARD</label>
+                                                        <label><input type="radio" name="payment_method" value="CREDIT CARD">CREDIT CARD</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method">COMPLIMENTARY</label>
+                                                        <label><input type="radio" name="payment_method" value="COMPLIMENTARY">COMPLIMENTARY</label>
                                                      </div>
                                                 </div>
                                            </div>
@@ -242,7 +242,7 @@
                                     <div class="row mx-0 form-group">
                                                 <label class="col-md-5">Select Inspection Branch</label>
                                                 <div class="col-md-7">
-                                                     <select name="isp_branch" class="cities form-control" id="isp_branch" required="">
+                                                     <select name="isp_branch" class="form-control" id="isp_branch" required="">
                                                         <option value="" selected="" disabled="">Select ISP Branch</option>
                                                         <option check_home="1" value="<?=$_SESSION['user_data'][0]['admin_id']?>">Home Branch</option>
                                                         <?php
@@ -260,7 +260,7 @@
                                     <div class="row mx-0 form-group">
                                                 <label class="col-md-6">Select Vendor</label>
                                                   <div class="col-md-6">
-                                                    <select name="assigned_fe" class="form-control" id="fe_id" required="">
+                                                    <select name="assigned_fe" class="form-control" id="fe_id">
                                                     </select>
                                                 </div>
                                            </div>
@@ -270,22 +270,22 @@
                                                 <label class="col-md-5">PreInspection Reason</label>
                                                   <div class="col-md-7">
                                                     <div class="radio">
-                                                        <label><input type="radio" name="reason" checked>Breaking Case < 90 Days</label>
+                                                        <label><input type="radio" name="reason" value="Breaking Case < 90 Days" checked>Breaking Case < 90 Days</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="reason">Breaking Case > 90 Days</label>
+                                                        <label><input type="radio" name="reason" value="Breaking Case > 90 Days">Breaking Case > 90 Days</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="reason">RollOver</label>
+                                                        <label><input type="radio" value="RollOver" name="reason">RollOver</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input type="radio" name="reason">Renewak</label>
+                                                        <label><input type="radio" value="Renewal" name="reason">Renewal</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input type="radio" name="reason">Transfer Case</label>
+                                                        <label><input type="radio" name="reason" value="Transfer Case">Transfer Case</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input type="radio" name="reason">CNG Endorsment</label>
+                                                        <label><input value="CNG Endorsment" type="radio" name="reason">CNG Endorsment</label>
                                                      </div>
                                                 </div>
                                            </div>
@@ -485,5 +485,28 @@ $(document).on('change','#agent_name',function(){
       }
     }
   })
+})
+
+$(document).on('submit','#intimation_form',function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formdata = new FormData(form[0]);
+    $.ajax({
+        type:'POST',
+        data:formdata,
+        url:'<?=base_url()?>create-case',
+        processData:false,
+        contentType:false,
+        success:function(response){
+            var response = JSON.parse(response);
+            if (response.status==1) {
+                swal('Success',response.msg,'success');
+                location.reload();
+            }
+            else{
+                swal('Sorry!',response.msg,'error');
+            }
+        }
+    })
 })
 </script>

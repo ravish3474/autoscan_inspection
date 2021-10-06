@@ -1,6 +1,15 @@
+<style type="text/css">
+table th,td{
+  border: 1px solid black !important;
+}
+th{
+  background-color: #ea680f;
+  color: white;
+  font-size:xx-small!important;
+}
+</style>
 
-
-   <section class="content">
+   <section class="content mt-4">
    
         <div class="container-fluid">
             
@@ -13,7 +22,7 @@
                                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                     <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
                                   <ul class="list-unstyled m-0 ca_menu">
-                                     <li class="active"><a href="">NEW</a></li>
+                                     <li class="active"><a href="<?=base_url('new-cases')?>">NEW</a></li>
                                      <li class=""><a href="">EXECTIVE ASSIGNED</a></li>
                                      <li class=""><a href="">CLOSED</a></li>
                                      <li class=""><a href="">REPORT</a></li>

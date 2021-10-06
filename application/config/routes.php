@@ -83,3 +83,5 @@ $route['add-vendor'] = 'VendorController/add_vendor';
 $route['fetch-fe-data'] = 'VendorController/fetch_fe_data';
 $route['update-vendor'] = 'VendorController/update_vendor';
 $route['fetch-isp-fe'] = 'VendorController/fetch_isp_fe';
+$route['create-case'] = 'CasesController/create_case';
+$route['new-cases'] = 'CasesController/new_case';

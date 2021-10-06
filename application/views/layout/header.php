@@ -158,7 +158,7 @@ label{
                         </a>
                     </li>
                      <li >
-                        <a href="<?=base_url('Homecontroller/cases')?>">
+                        <a href="<?=base_url('new-cases')?>">
                         <i class="fa fa-briefcase"></i>
                             <span>Cases</span>
                         </a>
