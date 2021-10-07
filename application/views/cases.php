@@ -1,11 +1,13 @@
 <style type="text/css">
 table th,td{
   border: 1px solid black !important;
+  text-align: center !important;
 }
 th{
   background-color: #ea680f;
   color: white;
   font-size:xx-small!important;
+  text-align: center !important;
 }
 </style>
 
@@ -47,39 +49,44 @@ th{
                                       <th>Appointment Date & Time</th>
                                       <th>Remarks</th>
                                       <th>Insurer</th>
-                                      <th>Operator</th>
                                       <th>Source Branch</th>
                                       <th>Destination Branch</th>
-                                      <th></th>
+                                      <th>Action</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    <?php
+                                    foreach ($cases as $case) {
+                                    ?>
                                     <tr>
-                                      <td>01-02-2021</td>
-                                      <td>GURGAON</td>
-                                      <td>Testing UC 16, UC</td>
-                                      <td>UC Valuation 1  </td>
-                                      <td>Mayur Ytsrt</td>
-                                      <td>null</td>
-                                      <td>Mayur Ytsrt</td>
-                                      <td>7945515569</td>
-                                      <td>GJ7496199554</td>
-                                      <td>PRIVATE VEHICLE</td>
-                                       <td>DATSUN</td>
-                                      <td>null</td>
+                                      <td><?=$case['request_date']?></td>
+                                      <td><?=$case['c_city']?></td>
+                                      <td><?=$case['location']?></td>
+                                      <td><?=$case['reason']?></td>
+                                      <td><?=$case['agent_name']?></td>
+                                      <td><?=$case['payment_method']?></td>
+                                      <td><?=$case['appoint_date']?> <?=$case['appoint_time']?></td>
+                                      <td><?=$case['remarks']?></td>
+                                      <td><?=$case['insurer']?></td>
+                                      <td><?=$case['source_name']?></td>
+                                       <td><?=$case['destination_name']?></td>
                                       <td>
-                                        <span class="pointer p-1" ><img src=""></span>
-                                        <span class="pointer p-1" ><img src=""></span>
-                                        <span class="pointer p-1" ><img src=""></span>
-                                        <span class="pointer p-1" ><img src=""></span>
-                                        <span class="pointer p-1" ><img src=""></span>
+                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
                                       </td>
                                     </tr>
+                                    <?php
+                                    }
+                                    ?>
                                   </tbody>
                                 </table>
-                                </form>
-                                </div>
-                                
+                                <div class="pagination_links"> 
+                                  <?php echo $links; ?>  
+                                </div> 
+                                  </form>
+                              </div>
                             </div>
                        
                         </div>

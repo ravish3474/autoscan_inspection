@@ -85,3 +85,4 @@ $route['update-vendor'] = 'VendorController/update_vendor';
 $route['fetch-isp-fe'] = 'VendorController/fetch_isp_fe';
 $route['create-case'] = 'CasesController/create_case';
 $route['new-cases'] = 'CasesController/new_case';
+$route['new-cases/(:num)'] = 'CasesController/new_case/$1';
