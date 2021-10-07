@@ -1,5 +1,8 @@
 ﻿
 /* Card ======================================== */
+.pointer{
+  cursor: pointer;
+}
 .card {
   background: #fff;
   min-height: 50px;

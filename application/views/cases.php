@@ -71,10 +71,11 @@ th{
                                       <td><?=$case['source_name']?></td>
                                        <td><?=$case['destination_name']?></td>
                                       <td>
-                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
-                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
-                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
-                                        <span class="pointer p-1" ><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Quality Check"><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Assign FE"><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
+                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Assign to Another Branch" ><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
+                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Edit CASE"><img src="https://www.autoscan.co.in/assets/images/document.png"></span>
+                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Delete Permanently"><img src="https://www.autoscan.co.in/assets/images/trash.png"></span>
                                       </td>
                                     </tr>
                                     <?php
