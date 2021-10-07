@@ -155,37 +155,37 @@ label{
           <li class="active">
                         <a href="<?=base_url('Homecontroller/')?>">
                         <i class="fa fa-tachometer" aria-hidden="true"></i>
-                            <span>Home</span>
+                            <span class="side-content">Home</span>
                         </a>
                     </li>
                      <li >
                         <a href="<?=base_url('new-cases')?>">
                         <i class="fa fa-briefcase"></i>
-                            <span>Cases</span>
+                            <span class="side-content">Cases</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('create-coordinator')?>">
                         <i class="fa fa-user"></i>
-                            <span>Manage Coordinator</span>
+                            <span class="side-content">Manage Coordinator</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('manage-field-executive')?>">
                         <i class="fa fa-user"></i>
-                            <span>Manage FE</span>
+                            <span class="side-content">Manage FE</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('agents')?>">
                         <i class="fa fa-user"></i>
-                            <span>Mange Agents</span>
+                            <span class="side-content">Mange Agents</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('intimation-form')?>">
                         <i class="fa fa-list"></i>
-                            <span>Intimation Form</span>
+                            <span class="side-content">Intimation Form</span>
                         </a>
                     </li>
                    
@@ -193,16 +193,16 @@ label{
                      <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                         <i class='fa fa-building'></i>
-                            <span>Manage Companies</span>
+                            <span class="side-content">Manage Companies</span>
                         </a>
                         <ul class="ml-menu list-unstyled">
                             <li class="text-left pl-5">
-                                <a href="<?=base_url('insurance-companies')?>"><span>Add Insurance Company</span></a>
+                                <a href="<?=base_url('insurance-companies')?>"><span class="side-content">Add Insurance Company</span></a>
                             </li>
                             <li  class="text-left pl-5">
                             
                                 <a href="<?=base_url('insurance-branch')?>">
-                                  <span>Add Branch</span>
+                                  <span class="side-content">Add Branch</span>
                                 </a>
                             </li>
                         </ul>
@@ -211,13 +211,13 @@ label{
                      <li>
                         <a href="<?=base_url('Homecontroller/create_task')?>">
                         <i class="fa fa-lock"></i>
-                            <span>Password</span>
+                            <span class="side-content">Password</span>
                         </a>
                     </li>
                      <li>
                         <a href="<?=base_url('logout')?>">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            <span>Logout</span>
+                            <span class="side-content">Logout</span>
                         </a>
                     </li>
         </ul>
@@ -280,7 +280,7 @@ $(document).ready(function(){
     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
     $(".img-fluid").toggleClass("invisible mb-4");
     $("i").toggleClass("mb-4");
-    $("span").toggleClass("d-none");
+    $(".side-content").toggleClass("d-none");
     $(".logo_span").toggleClass("d-block");
     $("a").toggleClass("shadow-none");
    
