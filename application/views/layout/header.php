@@ -27,6 +27,7 @@ else{
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?=base_url('assets')?>/demo/demo.css" rel="stylesheet" />
   <link href="<?=base_url('assets')?>/css/style.css" rel="stylesheet" />
+  <link href="<?=base_url('assets')?>/css/component.css" rel="stylesheet" />
   <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
