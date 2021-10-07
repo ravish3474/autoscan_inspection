@@ -29,14 +29,7 @@ label{
     display: block;
     font-size: 12px
 }
-.img_scrl {
-    height: 445px;
-    overflow-y: scroll;
-    max-height: 700px;
-}
-.btn{
-padding: unset !important;
-}
+
 
 .bg-border
 {
@@ -45,9 +38,10 @@ padding: unset !important;
     color: #FFF;
     text-align: center;
 }
-</style>
 
-    <section class="content">
+</style>
+ 
+   <section class="content">
         <div class="container-fluid">
         
             <div class="app-main__outer">
@@ -58,15 +52,38 @@ padding: unset !important;
                             <div class="card-header-tab ">
                                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                    <table class="table  tabl_back">
-                                       <tr>
-                                           <td><strong>Proposer/Customer Name </strong><input type="text" value="ICICI" name="bank_name"></td>
-                                           <td><strong>Address: </strong><span><input type="text" name="field_executive" value="null" name="bank_name"></span></td>
-                                         
-                                       </tr>
                                         <tr>
-                                            <td><strong>Request Date: </strong><span><input type="text" value="" name="field_contact"></span></td>
-                                           <td><strong>Request Time: </strong><span><input type="text" value="" name="agent_name"></span></td>
-                                            <td><strong>Inspection Date & Time: </strong><span><input type="text" value="" name="field_contact"></span></td>
+                                           <td>
+                                                <strong>Proposer/Customer Name </strong>
+                                                <input type="text" value="" name="cutomer_name">
+                                            </td>
+                                           <td>
+                                                <strong>Address: </strong>
+                                                <span>
+                                                    <input type="text" name="address" value="">
+                                                </span>
+                                            </td>
+                                         
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Request Date: </strong>
+                                                <span>
+                                                    <input type="text" value="" name="field_contact">
+                                                </span>
+                                            </td>
+                                           <td>
+                                                <strong>Request Time: </strong>
+                                                <span>
+                                                    <input type="text" value="" name="agent_name">
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong>Inspection Date & Time: </strong>
+                                                <span>
+                                                    <input type="text" value="" name="field_contact">
+                                                </span>
+                                            </td>
                                        </tr>
                                    </table>
                                 </div>
@@ -89,10 +106,10 @@ padding: unset !important;
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="">
-                                                <div class=" border-bottom mb-2">
-                                                    <h5 class="col-md-4 p-2 bg-border">BODY PARTS</h5>
-                                                    <h5 class="col-md-4 p-2 bg-border">DESCRIPTION</h5>
-                                                    <h5 class="col-md-4 p-2 bg-border">REMARKS</h5>
+                                                <div class=" row border-bottom mb-2">
+                                                    <h6 class="col-md-4 p-2 bg-border">BODY PARTS</h6>
+                                                    <h6 class="col-md-4 p-2 bg-border">DESCRIPTION</h6>
+                                                    <h6 class="col-md-4 p-2 bg-border">REMARKS</h6>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">FR FENDER</label>
@@ -480,9 +497,9 @@ padding: unset !important;
                                         </div>
                                         <div class="col-md-6">
                                            <div class="">
-                                            <div class="border-bottom mb-2">
-                                                   <h5 class="col-md-6 p-2 bg-border">INSURER DETAILS</h5>
-                                                   <h5 class="col-md-6 p-2 bg-border">DESCRIPTION</h5>
+                                            <div class="row border-bottom mb-2">
+                                                   <h6 class="col-md-6 p-2 bg-border">INSURER DETAILS</h6>
+                                                   <h6 class="col-md-6 p-2 bg-border">DESCRIPTION</h6>
                                                </div>
                                             <div class="row mx-0 form-group">
                                                     <label class="col-md-6">INSURER</label>
@@ -502,9 +519,9 @@ padding: unset !important;
                                                         <input type="text" value="" name="agent_code" class="form-control" >
                                                     </div>
                                                </div>
-                                                 <div class="border-bottom mb-2">
-                                                    <h5 class="col-md-6 p-2 bg-border">VEHICLE DETAILS</h5>
-                                                   <h5 class="col-md-6 p-2 bg-border">DESCRIPTION</h5>
+                                                 <div class="row border-bottom mb-2">
+                                                    <h6 class="col-md-6 p-2 bg-border">VEHICLE DETAILS</h6>
+                                                   <h6 class="col-md-6 p-2 bg-border">DESCRIPTION</h6>
                                                </div>
                                             <div class="row mx-0 form-group">
                                                     <label class="col-md-6">VEHICLE NO</label>
@@ -579,27 +596,27 @@ padding: unset !important;
                                                     </div>
                                                </div>
                                                 <div class="border-bottom mb-2">
-                                                   <h5 class="p-2 bg-border">RECOMMENDATION FOR INSURANCE</h5>
+                                                   <h6 class="p-2 bg-border">RECOMMENDATION FOR INSURANCE</h6>
                                                </div>
-                                                <div class="row mx-0 form-group d-flex">
-                                                    <div class="form-check-inline">
-                                                      <input class="d-none" type="radio" id="radio1" value="option1" name="recomm" checked="">
-                                                      <label class="form-check-label" for="radio1">Yes</label>
+                                                  <div class="row mx-0 form-group d-flex">
+                                                    <div class="form-check form-check-inline">
+                                                      <input type="radio" id="radio1" value="option1" name="recomm" checked="">
+                                                      <label class="form-check-label pl-2" for="radio1">Yes</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                      <input class="d-none" type="radio" id="radio2" value="option2" name="recomm">
-                                                      <label class="form-check-label" for="radio2">No</label>
+                                                      <input type="radio" id="radio2" value="option2" name="recomm">
+                                                      <label class="form-check-label pl-2" for="radio2">No</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                      <input class="d-none" type="radio" id="radio3" value="option3" name="recomm">
-                                                      <label class="form-check-label" for="radio3">On Hold</label>
+                                                      <input  type="radio" id="radio3" value="option3" name="recomm">
+                                                      <label class="form-check-label pl-2" for="radio3">On Hold</label>
                                                     </div>
                                                </div>
                                                <div class="border-bottom mb-2">
-                                                   <h5 class="p-2 bg-border">QC Remarks</h5>
+                                                   <h6 class="p-2 bg-border">QC Remarks</h6>
                                                </div>
                                                 <div class="row mx-0 form-group">
-                                                    <textarea  rows="4" cols="54" value=""  name="qc_remarks" class=""> 
+                                                    <textarea  rows="4" cols="65" value=""  name="qc_remarks" class=""> 
                                                     </textarea>
                                                </div>
                                              
@@ -630,3 +647,38 @@ padding: unset !important;
 
 </div>
 </section>
+   <script>
+$(window).on('load',function(){
+    //console.log("google");
+    if ($('#picture').length==0)
+    {
+        $('#btn_submit').attr('disabled',true);
+        $form = $('#create_task');
+        $form.replaceWith($form.html());
+        var html = '';
+    html+='<form method="post" id="pic_form" action="" enctype="multipart/form-data">'+
+              '<input type="hidden" name="task_id" value="449">'+
+          '<div class="box">'+
+          '<label>All Photos</label>'+
+            '<input type="file" name="all_pics" required id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />'+
+            '<label for="file-5"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">'+
+            '<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>'+
+            '</figure> <span style="font-size: 17px;">Choose a file&hellip;</span></label>'+
+        '</div>'+
+           '<div class="box">'+
+          '<label>CHASIS</label>'+
+            '<input type="file" name="chasis_pic" required id="file-6" class="inputfile inputfile-4" data-multiple-caption="{count} files selected"/>'+
+            '<label for="file-6"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">'+
+            '<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>'+
+            '</figure> <span style="font-size: 17px;">Choose a file&hellip;</span></label>'+
+        '</div>'+
+        '<br>'+
+        '<button type="submit" class="btn btn-primary" >Submit</button>'+
+        '</form>';
+        $('#new_pictures').empty();
+        $('#new_pictures').append(html);
+    }
+
+})
+
+</script> 

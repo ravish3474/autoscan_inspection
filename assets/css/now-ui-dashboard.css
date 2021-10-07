@@ -255,7 +255,7 @@ Copyright (c) 2015 Daniel Eden
   .ps {
     overflow: auto !important; } }
 
-.btn,
+/*.btn,
 .navbar .navbar-nav > a.btn {
   border-width: 2px;
   font-weight: 500;
@@ -267,8 +267,8 @@ Copyright (c) 2015 Daniel Eden
   padding: 11px 22px;
   cursor: pointer;
   background-color: #888;
-  color: #FFFFFF; }
-  .btn:hover, .btn:focus, .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active:focus, .btn:not(:disabled):not(.disabled).active:focus, .btn:active:hover, .btn.active:hover,
+  color: #FFFFFF; }*/
+  /*.btn:hover, .btn:focus, .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active:focus, .btn:not(:disabled):not(.disabled).active:focus, .btn:active:hover, .btn.active:hover,
   .show > .btn.dropdown-toggle,
   .show > .btn.dropdown-toggle:focus,
   .show > .btn.dropdown-toggle:hover,
@@ -419,9 +419,9 @@ Copyright (c) 2015 Daniel Eden
   .btn:not(.btn-icon) .now-ui-icons,
   .navbar .navbar-nav > a.btn:not(.btn-icon) .now-ui-icons {
     position: relative;
-    top: 1px; }
+    top: 1px; }*/
 
-.btn-primary {
+/*.btn-primary {
   background-color: #f96332;
   color: #FFFFFF; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:active:hover, .btn-primary.active:hover,
@@ -449,8 +449,8 @@ Copyright (c) 2015 Daniel Eden
       background-color: transparent;
       color: #fa7a50;
       text-decoration: none;
-      box-shadow: none; }
-
+      box-shadow: none; }*/
+/*
 .btn-success 
 {
   color: #fff;
@@ -712,7 +712,7 @@ Copyright (c) 2015 Daniel Eden
 .btn:disabled, .btn[disabled], .btn.disabled {
   opacity: 0.5;
   filter: alpha(opacity=50);
-  pointer-events: none; }
+  pointer-events: none; }*/
 
 [class*="btn-outline-"] {
   border: 1px solid;
