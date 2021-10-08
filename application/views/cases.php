@@ -71,7 +71,7 @@ th{
                                       <td><?=$case['source_name']?></td>
                                        <td><?=$case['destination_name']?></td>
                                       <td>
-                                        <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Quality Check"><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
+                                        <span class="pointer p-1 quality_check" case_id="<?=$case['case_id']?>" veh_class="<?=$case['vehicle_class']?>"  data-toggle="tooltip" data-placement="top" title="Quality Check"><img src="https://www.autoscan.co.in/assets/images/notepad.png"></span>
                                         <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Assign FE"><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
                                         <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Assign to Another Branch" ><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
                                         <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Edit CASE"><img src="https://www.autoscan.co.in/assets/images/document.png"></span>
@@ -100,3 +100,22 @@ th{
 
 </div>
 </section>
+<script type="text/javascript">
+$(document).on('click','.quality_check',function(){
+  var case_id = btoa($(this).attr('case_id'));
+  var veh_class = $(this).attr('veh_class');
+  var url = "";
+  if (veh_class=="PRIVATE VEHICLE") {
+    url='<?=base_url()?>'+'quality-check-private-vehicle/'+case_id;
+    window.location.href=url;
+  }
+  else if(veh_class=="COMMERCIAL"){
+    url='<?=base_url()?>'+'quality-check-commercial-vehicle/'+case_id;
+    window.location.href=url;
+  }
+  else{
+    url='<?=base_url()?>'+'quality-check-two-wheeler/'+case_id;
+    window.location.href=url;
+  }
+})
+</script>

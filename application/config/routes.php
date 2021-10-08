@@ -86,3 +86,6 @@ $route['fetch-isp-fe'] = 'VendorController/fetch_isp_fe';
 $route['create-case'] = 'CasesController/create_case';
 $route['new-cases'] = 'CasesController/new_case';
 $route['new-cases/(:num)'] = 'CasesController/new_case/$1';
+$route['quality-check-private-vehicle/(:any)'] = 'QualityController/pvt_cars/$1';
+$route['quality-check-commercial-vehicle/(:any)'] = 'QualityController/commercial/$1';
+$route['quality-check-two-wheeler/(:any)'] = 'QualityController/two_wheeler/$1';
