@@ -18,6 +18,35 @@ class VendorController extends CI_Controller {
 		$this->load->view('layout/footer');
     }
 
+    public function assign_fe_submit(){
+        $fe_id = $this->input->post('fe_id');
+        $case_id = $this->input->post('case_id');
+        $table = "cases";
+        $data = array('assigned_fe'=>$fe_id,'case_status'=>1);
+        $condition = array('case_id'=>$case_id);
+        $result = $this->CommonModel->update_table($table,$data,$condition);
+        if ($result) {
+            die(json_encode(array('status'=>'1','msg'=>'Case Assigned Successfully')));
+        }
+        else{
+            die(json_encode(array('status'=>'0','msg'=>'Something Went Wrong')));
+        }
+
+    }
+
+    public function fetch_all_fe(){
+        $sess_coord_id = $_SESSION['user_data'][0]['admin_id'];
+        $table = "field_executive";
+        $condition = array('coordinator_id'=>$sess_coord_id);
+        $data = $this->CommonModel->fetch_data($table,$condition);
+        if (count($data)>0) {
+            die(json_encode(array('status'=>'1','data'=>$data)));
+        }
+        else{
+            die(json_encode(array('status'=>'0','msg'=>'No FE Created')));
+        }
+    }
+
     public function fetch_isp_fe(){
         $coord_id = $this->input->post('coord_id');
         $sess_coord_id = $_SESSION['user_data'][0]['admin_id'];

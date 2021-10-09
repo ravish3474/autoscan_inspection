@@ -15,7 +15,7 @@ table{
 }
 .form-control{
 font-size: 14px !important;
-    height: 26px !important;
+    height: 26px !important;+
     padding: 2px 6px !important;
 }
 

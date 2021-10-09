@@ -38,7 +38,7 @@ class CasesModel extends CI_Model{
 			    c.c_name AS destination_name
 				FROM cases as a
 			    LEFT JOIN coordinators as b ON a.source_branch=b.admin_id
-			    LEFT JOIN coordinators as c ON a.destination_branch=c.admin_id WHERE a.case_status=0 AND (a.source_branch='$coord_id' || a.destination_branch='$coord_id')";
+			    LEFT JOIN coordinators as c ON a.destination_branch=c.admin_id WHERE a.case_status=$case_status AND (a.source_branch='$coord_id' || a.destination_branch='$coord_id')";
 
         $query = $this->db->query($sql)->num_rows(); 
 
