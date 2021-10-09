@@ -250,7 +250,7 @@ label{
                  <li class=""><a href="">QC Summary</a></li>
                  <li class=""><a href="">Search</a></li>
                  <li class=""><a href="">MIS</a></li>
-                 <li class=""><a href="">Worksheet</a></li>
+                 <li class=""><a href="<?=base_url()?>worksheet">Worksheet</a></li>
             </ul>     
               <!-- here we paste or write logout code -->
               <ul class="list-unstyled main_nav ml-auto mb-0">

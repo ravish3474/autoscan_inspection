@@ -89,17 +89,20 @@
                     <tr>
                         <th class="fixed-side" scope="col">Names</th>
                         <?php
-                            for($i = 9 ; $i <=23 ; $i++){
+                            for($i = 7 ; $i <=21 ; $i++){
                                 echo "<th  scope='col'>".$i."-".($i+1)."</th>";
                             }
                         ?>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach ($fields as $field) {
+                    ?>
                     <tr>
-                    <th class="fixed-side">Left Column</th>
+                    <th class="fixed-side"><?=$field['fe_name']?></th>
                         <td>Cell content<br>
-                            test</td>
+                            test<br></td>
                         <td><a href="#">Cell content longer</a></td>
                         <td>Cell content</td>
                         <td>Cell content</td>
@@ -116,66 +119,9 @@
                         <td>Cell content</td>
                     
                     </tr>
-                                        <tr>
-                    <th class="fixed-side">Left Column</th>
-                        <td>Cell content<br>
-                            test</td>
-                        <td><a href="#">Cell content longer</a></td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                    
-                    </tr>
-                                        <tr>
-                    <th class="fixed-side">Left Column</th>
-                        <td>Cell content<br>
-                            test</td>
-                        <td><a href="#">Cell content longer</a></td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                    
-                    </tr>
-                                        <tr>
-                    <th class="fixed-side">Left Column</th>
-                        <td>Cell content<br>
-                            test</td>
-                        <td><a href="#">Cell content longer</a></td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                    
-                    </tr>
+                    <?php
+                    }
+                    ?>
                    
                 </tbody>
                 <!-- <tfoot>
