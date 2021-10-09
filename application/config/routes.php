@@ -98,3 +98,4 @@ $route['fetch-all-coordinators'] = 'CoordinatorController/fetch_all_coordinators
 $route['assign-coordinator-submit'] = 'CoordinatorController/assign_coordinator_submit';
 $route['worksheet'] = 'CoordinatorController/worksheet';
 $route['view-edit-case/(:any)'] = 'CasesController/view_edit_case/$1';
+$route['upload-pics'] = 'QualityController/upload_pics';
