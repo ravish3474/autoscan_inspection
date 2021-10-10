@@ -65,19 +65,19 @@ class HomeController extends CI_Controller {
 	{
 	$pdf = new \Mpdf\Mpdf([
 		    'mode' => 'c',
-		    'margin_top' => 0,
+		    'margin_top' => 30,
 		    'margin_right' => 2,
 		    'margin_left' => 2,
 		    'margin_bottom' => 0,
 		    'margin_header' => 2,
-		    'margin_footer' => 0,
+		    'margin_footer' => 2,
 		  ]);
 
 		 $pdf->SetHTMLHeader('
 		<table>
-		<tr style="margin-top:10px">
+		<tr>
 			<td style="width:60%">
-			    <img src="assets/img/logo.png" height="80" width="180"/>
+			    <img src="assets/img/logo.png" height="80" width="150"/>
 			</td> 
 			<td style="width:40%; font-size:12px">
 			   	<p>Head Office: Sector-16, Rohini,Delhi-110089</p>
@@ -88,21 +88,19 @@ class HomeController extends CI_Controller {
 			</tr>
 		</table>
 		');
-
-		// $pdf->SetHTMLFooter('
-		// <div style="text-align: right; font-weight: bold;">
-		//     <img src="assets/img/logo.png" height="60" width="900"/>
-		// </div> ');
-
+		 $pdf->SetHTMLFooter('
+		<table width="100%">
+		    <tr>
+		        <td width="50%" style="font-size:10px;">This is an auto generated Report and Digitally Signed By Authorised Sugnature</td>
+		        <td width="50%" align="right" style="font-size:10px;">Page {PAGENO} of {nbpg}</td>
+		    </tr>
+		</table>');
 		$pdf->useSubstitutions=false;
 		$pdf->setAutoTopMargin = 'stretch';
 		$pdf->SetDisplayMode('fullpage');
-
-
 		$html=$this->load->view('html',[],true);
-		$html1=' <div style="width:100%; height:80px;">
-        
-			  </div>
+		$html1='
+		<div style="padding-top:50px" >
 			  <table class="img-tbl" style="margin-top:100px">
 				<tr>
 				<td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
@@ -112,7 +110,6 @@ class HomeController extends CI_Controller {
 				<td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
 				</td>
 				</tr>
-
 			</table>
 		  	<table class="img-tbl" style="margin-top:100px">
 				<tr>
@@ -143,7 +140,8 @@ class HomeController extends CI_Controller {
 				<td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
 				</td>
 				</tr>
-			</table>';
+			</table>
+			</div>';
 
 		$stylesheet='assets/css/bootstrap.css';
 		$pdf->WriteHTML($stylesheet,1);

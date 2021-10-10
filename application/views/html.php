@@ -24,8 +24,7 @@ table {
 .table td, .table th {
     border: 1px solid black;
     font-size: 10px;
-   
-    padding: 5px;
+    padding: 3px;
 }
 
 
@@ -42,14 +41,15 @@ table {
 
 </style>
 <div class="container">
-  <div style="width:100%; height:80px;">
-        
-  </div>
   <h2 style="text-decoration: underline;text-align: center;">TWO WHEELER PRE-INSPECTION REPORT</h2>
-  <span style="float:left">Request no:</span>
-  <span style="float:right"> ref no</span>
-  <div class="table-responsive-sm mt-2">   
-    <table class="table " style="width: 100%; margin-left:5px;margin-right: 5px ;"> 
+  <table width="100%" style="width: 100%; margin-left:5px;margin-right: 5px ;">
+        <tr>
+            <td width="50%" style="font-size:12px;">Request No: kp-bajaj-2018-001210</td>
+            <td width="50%" align="right" style="font-size:12px;">Ref. No. : 2018-03395147</td>
+        </tr>
+  </table>
+  <div class="table-responsive-sm">   
+    <table class="table " style="width: 100%; margin-left:5px;margin-right: 5px;margin-top: 10px;"> 
       <tbody>
         <tr>
           <td style="width:35%;">Proposer:</td>
@@ -321,6 +321,12 @@ table {
     <p style="margin-top:0px;font-size: 6px;">I hearby confirm & declare that the above mentioned identification details of my vehicles no DL3SCZ6073 as well as that of damage to this vehicle as noted by the inspecting offical are correct. Nothing has been hidden/Undisclosed.
    <br>I further confirm & declare that the Vehicle proposed for insurance after a break in cover has not met with any accident giving rise to any claim by a third party for injury or death caused to any person or damage to any property/insured vehicle during the period following the expiry of a previous insurance, till the moment it is proposed for insurance.<br>
     I also agree that damage is mentioned above shall be excluded in the event of any claim being lodged.</p>
+  </div>
+  <div style="margin-left:5px" align="right">
+    <p style="font-size: 12px;margin:0px" align="right">For Auto Scan Technical Services</p>
+    <img src="assets/img/signature.jpeg" width="100" height="55" style="margin:0px">
+    <p align="right" style="margin:0px;font-size: 12px;">Authorized Signature</p>
+     <p style="margin-top:0px;font-size: 6px;">Note: Damages mentioned in this report and/or seen in the photographs are not to be correct for insurance any correction in report will be informed to concerned authorised person within 24 hours.</p>
   </div>
   </div>
 </div>
