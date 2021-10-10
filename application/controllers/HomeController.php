@@ -188,7 +188,7 @@ class HomeController extends CI_Controller {
 		$pdf->useSubstitutions=false;
 		$pdf->setAutoTopMargin = 'stretch';
 		$pdf->SetDisplayMode('fullpage');
-		$html=$this->load->view('html',[],true);
+		$html=$this->load->view('pvt_pdf',[],true);
 		$html1='
 		<div style="padding-top:50px" >
 			  <table class="img-tbl" style="margin-top:100px">
@@ -278,7 +278,7 @@ class HomeController extends CI_Controller {
 		$pdf->useSubstitutions=false;
 		$pdf->setAutoTopMargin = 'stretch';
 		$pdf->SetDisplayMode('fullpage');
-		$html=$this->load->view('html',[],true);
+		$html=$this->load->view('commercial_pdf',[],true);
 		$html1='
 		<div style="padding-top:50px" >
 			  <table class="img-tbl" style="margin-top:100px">
