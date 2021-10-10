@@ -52,7 +52,7 @@ table {
     <table class="table " style="width: 100%; margin-left:5px;margin-right: 5px;margin-top: 10px;"> 
       <tbody>
         <tr>
-          <td style="width:35%;">Proposer:</td>
+          <td style="width:35%;">Proposer/Customer Name:</td>
           <td style="width:35%;"></td>
           <td style="width:35%;">Address:</td>
         </tr>
@@ -317,7 +317,7 @@ table {
     </div>
   </div>
   <div style="margin-left:5px">
-    <span style="font-size: 12px;"><u>DECLARTION OF OWNERS:</u></span>
+    <span style="font-size: 12px;"><u>DECLARATION OF OWNERS:</u></span>
     <p style="margin-top:0px;font-size: 6px;">I hearby confirm & declare that the above mentioned identification details of my vehicles no DL3SCZ6073 as well as that of damage to this vehicle as noted by the inspecting offical are correct. Nothing has been hidden/Undisclosed.
    <br>I further confirm & declare that the Vehicle proposed for insurance after a break in cover has not met with any accident giving rise to any claim by a third party for injury or death caused to any person or damage to any property/insured vehicle during the period following the expiry of a previous insurance, till the moment it is proposed for insurance.<br>
     I also agree that damage is mentioned above shall be excluded in the event of any claim being lodged.</p>
