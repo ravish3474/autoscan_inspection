@@ -1,4 +1,28 @@
 <style>
+label{
+    font-weight: bold;
+    display: block;
+    font-size: 12px
+}
+.img_scrl {
+    height: 445px;
+    overflow-y: scroll;
+    max-height: 700px;
+}
+</style>
+<style>
+#picture a.small, #picture a.small:visited { display:block; text-decoration:none; background:#ffffff; top:0; left:0; border:0;}
+#picture a img {border:0;}
+/* #picture a.small:hover {text-decoration:none; background-color:#000000; color:#000000;} */
+#picture a .large {display:block; position:absolute; width:0; height:0; border:0; top:0; left:0;}
+#picture a.small:hover .large {display:block; position:absolute; top: 90px; left:150px;
+  width: 400px;
+    height: 400px;
+    z-index: 12; }
+    .chk-box{
+      width: 20px;
+      height: 20px;
+    }
 .pointer{
     cursor: pointer;
 }
@@ -71,9 +95,48 @@ label{
                                 <div class="p-1 text-center bg-primary text-white mb-2"><h6 class="m-0 p-2 bg-border">IMAGES</h6></div>
                                   <div class="border-right img_scrl">
                                       <ul class="list-unstyled m-0 text-center">
-                          		   <Label>No Pictures Uploaded By FE</Label>
-                          		   <div id="new_pictures">
-									</div>
+                                      <?php
+                                      if (count($vehicle_pics)>0) {
+                                        ?>
+                                        <li class="mb-2">
+                                                   <input type="checkbox" id="select_all" class="chk-box checker_dude"><p>Select All</p>
+                                        </li>
+                                        <?php
+                                        $pics = $vehicle_pics[0]['all_pics'];
+                                        $exp_pics = explode(",",$pics);
+                                        foreach ($exp_pics as $pic_tures) {
+                                      ?>
+                                      <li class="mb-2">
+                                            <div id="picture">
+                                                <a class="small" href="#nogo" title="small image">
+                                                   <input type="checkbox" name="all_pics" value="<?=$pic_tures?>" class="chk-box checker_dude">
+                                                    <img src="<?=base_url()?>upload/images/<?=$pic_tures?>"class="w_80" title="small image" />
+                                                    <img class="large" src="<?=base_url()?>upload/images/<?=$pic_tures?>" title="large image" />
+                                                </a>
+                                            </div>
+                                        </li>
+                                      <?php
+                                      }
+                                      if ($vehicle_pics[0]['chasis_pic']) {
+                                        ?>
+                                    <h3>CHASIS</h3>
+                                      <li class="mb-2">
+                                            <div id="picture">
+                                                <a class="small" href="#nogo" title="small image">
+                                                   <input type="hidden" checked name="chasis_pic" value="<?=$vehicle_pics[0]['chasis_pic']?>" class="chk-box">
+                                                    <img src="<?=base_url()?>upload/images/<?=$vehicle_pics[0]['chasis_pic']?>"class="w_80" title="small image" />
+                                                    <img class="large" src="<?=base_url()?>upload/images/<?=$vehicle_pics[0]['chasis_pic']?>" title="large image" />
+                                                </a>
+                                            </div>
+                                        </li>
+                                      <?php   
+                                      }
+                                      }else{
+                                      ?>
+                                		   <Label>No Pictures Uploaded By FE</Label>
+                                		   <div id="new_pictures">
+      									               </div>
+                                     <?php } ?>
                                       </ul>
                                   </div>
                               </div>
@@ -679,7 +742,7 @@ label{
 </section>
    <script>
 $(window).on('load',function(){
-    //console.log("google");
+    if ($('#picture').length==0){
         $('#btn_submit').attr('disabled',true);
         $form = $('#create_task');
         $form.replaceWith($form.html());
@@ -705,6 +768,7 @@ $(window).on('load',function(){
         '</form>';
         $('#new_pictures').empty();
         $('#new_pictures').append(html);
+      }
 
 })
 
@@ -732,3 +796,9 @@ $(document).on('submit','#pic_form',function(e){
 })
 
 </script> 
+<script>
+$('#select_all').change(function() {
+    var checkboxes = $('input[name=all_pics]');
+    checkboxes.prop('checked', $(this).is(':checked'));
+  });
+</script>

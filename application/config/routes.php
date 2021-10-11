@@ -99,3 +99,4 @@ $route['assign-coordinator-submit'] = 'CoordinatorController/assign_coordinator_
 $route['worksheet'] = 'CoordinatorController/worksheet';
 $route['view-edit-case/(:any)'] = 'CasesController/view_edit_case/$1';
 $route['upload-pics'] = 'QualityController/upload_pics';
+$route['qc-two-wheeler'] = 'QualityController/qc_two_wheeler';

@@ -53,13 +53,13 @@ table {
       <tbody>
         <tr>
           <td style="width:35%;">Proposer/Customer Name:</td>
-          <td style="width:35%;"></td>
-          <td style="width:35%;">Address:</td>
+          <td style="width:35%;"><?=$customer_name?></td>
+          <td style="width:35%;">Address:<?=$address?></td>
         </tr>
         <tr>
-          <td style="width:35%;">Requested Date:</td>
-          <td style="width:35%;">Requested Time:</td>
-          <td style="width:35%;">Inspected Date & Time:</td>
+          <td style="width:35%;">Requested Date:<?=$request_date?></td>
+          <td style="width:35%;">Requested Time:<?=$request_time?></td>
+          <td style="width:35%;">Inspected Date & Time:<?=$isp_date_time?></td>
         </tr>
       </tbody>
     </table>    
@@ -72,154 +72,345 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>FR FENDER</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_fender_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FR FENDER</td>
+            <td <?=$style?>><?=$fr_fender_desc?></td>
+            <td <?=$style?>><?=$fr_fender_rem?></td>
           </tr>
           <tr>
-            <td>FR WHEEL RIM</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_wheel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FR WHEEL RIM</td>
+            <td <?=$style?>><?=$fr_wheel_desc?></td>
+            <td <?=$style?>><?=$fr_wheel_rem?></td>
           </tr>
           <tr>
-            <td>FR FORK ASSLY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_fork_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FR FORK ASSLY</td>
+            <td <?=$style?>><?=$fr_fork_desc?></td>
+            <td <?=$style?>><?=$fr_fork_rem?></td>
           </tr>
            <tr>
-            <td>RH FR SHOCKER</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_fr_shocker_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH FR SHOCKER</td>
+            <td <?=$style?>><?=$rh_fr_shocker_desc?></td>
+            <td <?=$style?>><?=$rh_fr_shocker_rem?></td>
           </tr>
           <tr>
-            <td>HEAD LIGHT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($headlight_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>HEAD LIGHT</td>
+            <td <?=$style?>><?=$headlight_desc?></td>
+            <td <?=$style?>><?=$headlight_rem?></td>
           </tr>
           <tr>
-            <td>FR CENTER COVER</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_center_cover_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FR CENTER COVER</td>
+            <td <?=$style?>><?=$fr_center_cover_desc?></td>
+            <td <?=$style?>><?=$fr_center_cover_rem?></td>
           </tr>
            <tr>
-            <td>RH FR PANEL</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_fr_panel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH FR PANEL</td>
+            <td <?=$style?>><?=$rh_fr_panel_desc?></td>
+            <td <?=$style?>><?=$rh_fr_panel_rem?></td>
           </tr>
           <tr>
-            <td>LH FR PANEL</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_fr_panel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH FR PANEL</td>
+            <td <?=$style?>><?=$lh_fr_panel_desc?></td>
+            <td <?=$style?>><?=$lh_fr_panel_rem?></td>
           </tr>
           <tr>
-            <td>RH FR INDICATOR LT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_fr_indicator_lt_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH FR INDICATOR LT</td>
+            <td <?=$style?>><?=$rh_fr_indicator_lt_desc?></td>
+            <td <?=$style?>><?=$rh_fr_indicator_lt_rem?></td>
           </tr>
            <tr>
-            <td>LH FR INDICATOR LT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_fr_indicator_lt_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH FR INDICATOR LT</td>
+            <td <?=$style?>><?=$lh_fr_indicator_lt_desc?></td>
+            <td <?=$style?>><?=$lh_fr_indicator_lt_rem?></td>
           </tr>
           <tr>
-            <td>HANDLE BAR</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($handle_bar_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>HANDLE BAR</td>
+            <td <?=$style?>><?=$handle_bar_desc?></td>
+            <td <?=$style?>><?=$handle_bar_rem?></td>
           </tr>
           <tr>
-            <td>SPEEDOMETER ASSLY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($speedometer_assly_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>SPEEDOMETER ASSLY</td>
+            <td <?=$style?>><?=$speedometer_assly_desc?></td>
+            <td <?=$style?>><?=$speedometer_assly_rem?></td>
           </tr>
            <tr>
-            <td>UTILITY BOX</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($utility_box_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>UTILITY BOX</td>
+            <td <?=$style?>><?=$utility_box_desc?></td>
+            <td <?=$style?>><?=$utility_box_rem?></td>
           </tr>
           <tr>
-            <td>RR BODY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rr_body_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RR BODY</td>
+            <td <?=$style?>><?=$rr_body_desc?></td>
+            <td <?=$style?>><?=$rr_body_rem?></td>
           </tr>
           <tr>
-            <td>RH RR COWL PANEL</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_rr_cowl_panel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH RR COWL PANEL</td>
+            <td <?=$style?>><?=$rh_rr_cowl_panel_desc?></td>
+            <td <?=$style?>><?=$rh_rr_cowl_panel_rem?></td>
           </tr>
            <tr>
-            <td>LH RR COWL PANEL</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_rr_cowl_panel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH RR COWL PANEL</td>
+            <td <?=$style?>><?=$lh_rr_cowl_panel_desc?></td>
+            <td <?=$style?>><?=$lh_rr_cowl_panel_rem?></td>
           </tr>
           <tr>
-            <td>RH RR INDICATOR LT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_rr_indicator_lt_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH RR INDICATOR LT</td>
+            <td <?=$style?>><?=$rh_rr_indicator_lt_desc?></td>
+            <td <?=$style?>><?=$rh_rr_indicator_lt_rem?></td>
           </tr>
           <tr>
-            <td>LH RR INDICATOR LT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_rr_indicator_lt_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH RR INDICATOR LT</td>
+            <td <?=$style?>><?=$lh_rr_indicator_lt_desc?></td>
+            <td <?=$style?>><?=$lh_rr_indicator_lt_rem?></td>
           </tr>
            <tr>
-            <td>TAIL LIGHT ASSLY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($tail_light_assly_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>TAIL LIGHT ASSLY</td>
+            <td <?=$style?>><?=$tail_light_assly_desc?></td>
+            <td <?=$style?>><?=$tail_light_assly_rem?></td>
           </tr>
           <tr>
-            <td>SEAT</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_footrest_assly_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH FOOTREST ASSLY</td>
+            <td <?=$style?>><?=$lh_footrest_assly_desc?></td>
+            <td <?=$style?>><?=$lh_footrest_assly_rem?></td>
           </tr>
           <tr>
-            <td>SILENSOR ASSLY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($seat_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>SEAT</td>
+            <td <?=$style?>><?=$seat_desc?></td>
+            <td <?=$style?>><?=$seat_rem?></td>
+          </tr>
+          <tr>
+            <?php
+            $style = "";
+            if ($silensor_assly_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>SILENSOR ASSLY</td>
+            <td <?=$style?>><?=$silensor_assly_desc?></td>
+            <td <?=$style?>><?=$silensor_assly_rem?></td>
           </tr>
            <tr>
-            <td>CHASSIS FRAME</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($chasis_frame_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>CHASSIS FRAME</td>
+            <td <?=$style?>><?=$chasis_frame_desc?></td>
+            <td <?=$style?>><?=$chasis_frame_rem?></td>
           </tr>
           <tr>
-            <td>FR FOOTBOARD PANEL</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_footboard_panel_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FR FOOTBOARD PANEL</td>
+            <td <?=$style?>><?=$fr_footboard_panel_desc?></td>
+            <td <?=$style?>><?=$fr_footboard_panel_rem?></td>
           </tr>
           <tr>
-            <td>RR WHEEL RIM</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fr_wheel_rim_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RR WHEEL RIM</td>
+            <td <?=$style?>><?=$fr_wheel_rim_desc?></td>
+            <td <?=$style?>><?=$fr_wheel_rim_rem?></td>
           </tr>
            <tr>
-            <td>SPARE WHEEL RIM</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($spare_wheel_rim_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>SPARE WHEEL RIM</td>
+            <td <?=$style?>><?=$spare_wheel_rim_desc?></td>
+            <td <?=$style?>><?=$spare_wheel_rim_rem?></td>
           </tr>
           <tr>
-            <td>RH RAER VIEW MIRROR</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($rh_rear_view_mirror_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>RH RAER VIEW MIRROR</td>
+            <td <?=$style?>><?=$rh_rear_view_mirror_desc?></td>
+            <td <?=$style?>><?=$rh_rear_view_mirror_rem?></td>
           </tr>
           <tr>
-            <td>LH REAR VIEW MIRROR</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($lh_rear_view_mirror_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>LH REAR VIEW MIRROR</td>
+            <td <?=$style?>><?=$lh_rear_view_mirror_desc?></td>
+            <td <?=$style?>><?=$lh_rear_view_mirror_rem?></td>
           </tr>
            <tr>
-            <td>BATTERY</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($battery_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>BATTERY</td>
+            <td <?=$style?>><?=$battery_desc?></td>
+            <td <?=$style?>><?=$battery_rem?></td>
           </tr>
           <tr>
-            <td>ENGINE CHAMBER</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($engine_chamber_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>ENGINE CHAMBER</td>
+            <td <?=$style?>><?=$engine_chamber_desc?></td>
+            <td <?=$style?>><?=$engine_chamber_rem?></td>
           </tr>
           <tr>
-            <td>FUEL TANK</td>
-            <td></td>
-            <td></td>
+            <?php
+            $style = "";
+            if ($fuel_tank_desc!='Intact') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td <?=$style?>>FUEL TANK</td>
+            <td <?=$style?>><?=$fuel_tank_desc?></td>
+            <td <?=$style?>><?=$fuel_tank_rem?></td>
           </tr>
       </table>
     </div>
@@ -230,15 +421,15 @@ table {
         </tr>
         <tr>
           <td>INSURER</td>
-          <td>Bajaj Allianz General Insurance Company</td>
+          <td><?=$insurer_qc?></td>
         </tr>
         <tr>
           <td>AGENT BRANCH</td>
-          <td>1155</td>
+          <td><?=$agent_branch_qc?></td>
         </tr>
         <tr>
           <td>AGENT CODENAME</td>
-          <td>13/03/2020 16:20HRS</td>
+          <td><?=$agent_code_qc?></td>
         </tr>
       </table> 
       <table class="table mt-2">
@@ -247,47 +438,47 @@ table {
         </tr>
         <tr>
           <td>VEHICLE NO</td>
-          <td>DL3SCZ6073SDSDS</td>
+          <td><?=$vehicle_num_qc?></td>
         </tr>
         <tr>
           <td>CHASSIS NO</td>
-          <td>146273</td>
+          <td><?=$chassis_num_qc?></td>
         </tr>
         <tr>
           <td>ENGINE NO</td>
-          <td>234423</td>
+          <td><?=$engine_num_qc?></td>
         </tr>
         <tr>
           <td>MAKE</td>
-          <td>HONDA</td>
+          <td><?=$make_qc?></td>
         </tr>
         <tr>
           <td>MODEL</td>
-          <td>ACTIVA</td>
+          <td><?=$model_qc?></td>
         </tr>
         <tr>
           <td>DATE OF REGISTRATION</td>
-          <td>07/06/2020</td>
+          <td><?=$date_of_reg_qc?></td>
         </tr>
         <tr>
           <td>YEAR OF MANUFACTURE</td>
-          <td>2018</td>
+          <td><?=$year_of_manufacture_qc?></td>
         </tr>
         <tr>
           <td>COLOR</td>
-          <td>BLACK</td>
+          <td><?=$color_qc?></td>
         </tr>
         <tr>
           <td>ODOMETER</td>
-          <td>334</td>
+          <td><?=$odometer_qc?></td>
         </tr>
         <tr>
           <td>FUEL MODE</td>
-          <td>PETROL</td>
+          <td><?=$fuel_mode_qc?></td>
         </tr>
         <tr>
           <td>R.C VERIFIED</td>
-          <td>YES</td>
+          <td><?=$rc_verified_qc?></td>
         </tr>
       </table>
       <table class="table mt-2">
@@ -295,7 +486,7 @@ table {
           <th colspan="2">CHASSIS IMPRESSION</th>
         </tr>
         <tr>
-           <td colspan="2"> <img src="https://www.autoscan.co.in/uploadFiles/3951248e-64d2-43d1-8b0f-daa8f29f4b8d.jpg" height="250" width="1100"/></td>
+           <td colspan="2"> <img src="<?=base_url()?>upload/images/<?=$chasis_pic?>" height="250" width="1100"/></td>
         </tr>
       </table>
        <table class="table mt-2">
@@ -303,7 +494,7 @@ table {
           <th colspan="2">RECOMMENDATION FOR INSURANCE</th>
         </tr>
         <tr>
-           <td colspan="2">Yes</td>
+           <td colspan="2"><?=$recomm?></td>
         </tr>
       </table>
       <table class="table mt-2">
@@ -311,14 +502,14 @@ table {
           <th colspan="2">QC REMARKS</th>
         </tr>
         <tr>
-           <td colspan="2"></td>
+           <td colspan="2"><?=$qc_remarks?></td>
         </tr>
       </table>
     </div>
   </div>
   <div style="margin-left:5px">
     <span style="font-size: 12px;"><u>DECLARATION OF OWNERS:</u></span>
-    <p style="margin-top:0px;font-size: 6px;">I hearby confirm & declare that the above mentioned identification details of my vehicles no DL3SCZ6073 as well as that of damage to this vehicle as noted by the inspecting offical are correct. Nothing has been hidden/Undisclosed.
+    <p style="margin-top:0px;font-size: 6px;">I hearby confirm & declare that the above mentioned identification details of my vehicles no <?=$vehicle_num_qc?> as well as that of damage to this vehicle as noted by the inspecting offical are correct. Nothing has been hidden/Undisclosed.
    <br>I further confirm & declare that the Vehicle proposed for insurance after a break in cover has not met with any accident giving rise to any claim by a third party for injury or death caused to any person or damage to any property/insured vehicle during the period following the expiry of a previous insurance, till the moment it is proposed for insurance.<br>
     I also agree that damage is mentioned above shall be excluded in the event of any claim being lodged.</p>
   </div>

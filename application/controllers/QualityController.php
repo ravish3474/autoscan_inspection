@@ -15,8 +15,139 @@ class QualityController extends CI_Controller {
 		$this->load->view('layout/footer');
     }
 
+    public function qc_two_wheeler(){
+        $case_id = $this->input->post('case_id');
+        $all_pics = implode(",",$this->input->post('all_pics'));
+        unset($_POST['all_pics']);
+        $_POST['all_pics'] = $all_pics;
+        $table = 'qc_two_wheeler';
+        $table_field_name = 'case_id';
+        if($this->CommonModel->check_user($case_id,$table,$table_field_name)){
+            $insert = $this->CommonModel->insert_function($table,$_POST);
+            if ($insert) {
+                    $this->two_wheel_pdf($_POST);
+                    die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
+            }
+            else{
+                die(json_encode(array('status'=>'0','msg'=>'Something Went Wrong')));
+            }
+        }
+        else{
+        unset($_POST['case_id']);
+        $condition = array('case_id'=>$case_id);
+        $update = $this->CommonModel->update_table($table,$_POST,$condition);
+            if ($update) {
+                $this->two_wheel_pdf($_POST);
+                die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
+            }
+            else{
+                die(json_encode(array('status'=>'0','msg'=>'Failed')));
+            }
+        }
+    }
+
+    public function two_wheel_pdf($data)
+    {
+    $pdf = new \Mpdf\Mpdf([
+            'mode' => 'c',
+            'margin_top' => 30,
+            'margin_right' => 2,
+            'margin_left' => 2,
+            'margin_bottom' => 0,
+            'margin_header' => 2,
+            'margin_footer' => 2,
+          ]);
+
+         $pdf->SetHTMLHeader('
+        <table>
+        <tr>
+            <td style="width:60%">
+                <img src="assets/img/logo.png" height="80" width="150"/>
+            </td> 
+            <td style="width:40%; font-size:12px">
+                <p>Head Office: Sector-16, Rohini,Delhi-110089</p>
+                <p>Office: CSC-7/43, F Block, DDA Market, Sector-16, Rohini,Delhi</p>
+                <p>Phone: 9999999999</p>
+                <p>Website: www.autoscanbookvalue.com</p>
+            </td> 
+            </tr>
+        </table>
+        ');
+         $pdf->SetHTMLFooter('
+        <table width="100%">
+            <tr>
+                <td width="50%" style="font-size:10px;">This is an auto generated Report and Digitally Signed By Authorised Sugnature</td>
+                <td width="50%" align="right" style="font-size:10px;">Page {PAGENO} of {nbpg}</td>
+            </tr>
+        </table>');
+        $pdf->useSubstitutions=false;
+        $pdf->setAutoTopMargin = 'stretch';
+        $pdf->SetDisplayMode('fullpage');
+        $html=$this->load->view('two_pdf',$data,true);
+        $html1='
+        <div style="padding-top:50px" >
+              <table class="img-tbl" style="margin-top:100px">
+                <tr>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
+                </td>
+                </tr>
+            </table>
+            <table class="img-tbl" style="margin-top:100px">
+                <tr>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                </tr>
+            </table>
+             <table class="img-tbl" style="margin-top:100px">
+                <tr>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                </tr>
+            </table>
+             <table class="img-tbl" style="margin-top:100px">
+                <tr>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
+                </td>
+                </tr>
+            </table>
+            </div>';
+        $pdf_path = "upload/filename.pdf";
+        $stylesheet='assets/css/bootstrap.css';
+        $pdf->WriteHTML($stylesheet,1);
+        $pdf->WriteHTML($html);
+        $pdf->AddPage();
+        $pdf->WriteHTML($html1,2);
+        //$pdf->Output();
+        $pdf->Output($pdf_path, \Mpdf\Output\Destination::FILE);
+        // $pdf->Output($pdf_path, \Mpdf\Output\Destination::FILE);
+    }
+
     public function two_wheeler($id){
         $data['case_id'] = $id;
+        $case_id = base64_decode($id);
+        $table = "vehicle_pics";
+        $condition = array('case_id'=>$case_id);
+        $data['vehicle_pics'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "cases";
+        $data['case_data'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "qc_two_wheeler";
+        $data['qc_data'] = $this->CommonModel->fetch_data($table,$condition);
     	$this->load->view('layout/header');
 		$this->load->view('two_wheeler',$data);
 		$this->load->view('layout/footer');
@@ -24,6 +155,10 @@ class QualityController extends CI_Controller {
 
     public function commercial($id){
         $data['case_id'] = $id;
+        $case_id = base64_decode($id);
+        $table = "vehicle_pics";
+        $condition = array('case_id'=>$case_id);
+        $data['vehicle_pics'] = $this->CommonModel->fetch_data($table,$condition);
     	$this->load->view('layout/header');
 		$this->load->view('commercial_vehicle',$data);
 		$this->load->view('layout/footer');
