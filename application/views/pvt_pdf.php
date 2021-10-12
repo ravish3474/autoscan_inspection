@@ -24,7 +24,7 @@ table {
 .table td, .table th {
     border: 1px solid black;
     font-size: 10px;
-    padding: 3px;
+    padding: 2px;
 }
 
 
@@ -37,11 +37,13 @@ table {
   width: 48.7%;
   padding: 5px;
 }
-
-
+.td-1
+{
+  width: 40%;
+}
 </style>
 <div class="container">
-  <h2 style="text-decoration: underline;text-align: center;">TWO WHEELER PRE-INSPECTION REPORT</h2>
+  <h2 style="text-decoration: underline;text-align: center;">PVT. CARS PRE-INSPECTION REPORT</h2>
   <table width="100%" style="width: 100%; margin-left:5px;margin-right: 5px ;">
         <tr>
             <td width="50%" style="font-size:12px;">Request No: kp-bajaj-2018-001210</td>
@@ -72,102 +74,102 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>FR PANEL/HOOD</td>
+            <td class="td-1">FR PANEL/HOOD</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FR FENDER</td>
+            <td class="td-1">FR FENDER</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FR APRON PANEL</td>
+            <td class="td-1">FR APRON PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>RH PILLAR FRONT-A</td>
+            <td class="td-1">RH PILLAR FRONT-A</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH FR DOOR PANEL</td>
+            <td class="td-1">RH FR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH PILLAR CENTER-B</td>
+            <td class="td-1">RH PILLAR CENTER-B</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>RH RR DOOR PANEL</td>
+            <td class="td-1">RH RR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH RUNNING BOARD</td>
+            <td class="td-1">RH RUNNING BOARD</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH QTR PANEL</td>
+            <td class="td-1">RH QTR PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>DICKY/BACK DOOR</td>
+            <td class="td-1">DICKY/BACK DOOR</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH QTR PANEL</td>
+            <td class="td-1">LH QTR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH RUNNING BOARD</td>
+            <td class="td-1">LH RUNNING BOARD</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH RR DOOR PANEL</td>
+            <td class="td-1">LH RR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH PILLAR CENTER-B</td>
+            <td class="td-1">LH PILLAR CENTER-B</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH FR DOOR PANEL</td>
+            <td class="td-1">LH FR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH PILLAR FRONT-A</td>
+            <td class="td-1">LH PILLAR FRONT-A</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH FENDER PANEL</td>
+            <td class="td-1">LH FENDER PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH APRON PANEL</td>
+            <td class="td-1">LH APRON PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>ROOF PANEL</td>
+            <td class="td-1">ROOF PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FLOOR PANEL</td>
+            <td class="td-1">FLOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
@@ -179,27 +181,27 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>FRONT BUMPER</td>
+            <td class="td-1">FRONT BUMPER</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FR GRILL</td>
+            <td class="td-1">FR GRILL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH REAR VIEW MIRROR</td>
+            <td class="td-1">RH REAR VIEW MIRROR</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH REAR VIEW MIRROR</td>
+            <td class="td-1">LH REAR VIEW MIRROR</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RR BUMPER</td>
+            <td class="td-1">RR BUMPER</td>
             <td></td>
             <td></td>
           </tr>
@@ -211,32 +213,32 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>RH HEAD LAMP</td>
+            <td class="td-1">RH HEAD LAMP</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH HEAD LAMP</td>
+            <td class="td-1">LH HEAD LAMP</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH FOG LAMP</td>
+            <td class="td-1">RH FOG LAMP</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH FOG LAMP</td>
+            <td class="td-1">LH FOG LAMP</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH TAIL LAMP</td>
+            <td class="td-1">RH TAIL LAMP</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH TAIL LAMP</td>
+            <td class="td-1">LH TAIL LAMP</td>
             <td></td>
             <td></td>
           </tr>
@@ -248,17 +250,17 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>CONDENSOR</td>
+            <td class="td-1">CONDENSOR</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RADIATOR</td>
+            <td class="td-1">RADIATOR</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH FOG LAMP</td>
+            <td class="td-1">RH FOG LAMP</td>
             <td></td>
             <td></td>
           </tr>
@@ -270,7 +272,7 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>INSTRUMENT PANEL</td>
+            <td class="td-1">INSTRUMENT PANEL</td>
             <td></td>
             <td></td>
           </tr>
@@ -282,12 +284,12 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
-            <td>BATTERY</td>
+            <td class="td-1">BATTERY</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>TYRE CONDITION</td>
+            <td class="td-1">TYRE CONDITION</td>
             <td></td>
             <td></td>
           </tr>
@@ -299,15 +301,15 @@ table {
           <th colspan="2">INSURER DETAILS</th>
         </tr>
         <tr>
-          <td>INSURER</td>
+          <td class="td-1">INSURER</td>
           <td>Bajaj Allianz General Insurance Company</td>
         </tr>
         <tr>
-          <td>AGENT BRANCH</td>
+          <td class="td-1">AGENT BRANCH</td>
           <td>1155</td>
         </tr>
         <tr>
-          <td>AGENT CODE/NAME</td>
+          <td class="td-1">AGENT CODE/NAME</td>
           <td>13/03/2020 16:20HRS</td>
         </tr>
       </table> 
@@ -316,47 +318,47 @@ table {
           <th colspan="2">VEHICLE DETAILS</th>
         </tr>
         <tr>
-          <td>VEHICLE NO</td>
+          <td class="td-1">VEHICLE NO</td>
           <td>DL3SCZ6073SDSDS</td>
         </tr>
         <tr>
-          <td>CHASSIS NO</td>
+          <td class="td-1">CHASSIS NO</td>
           <td>146273</td>
         </tr>
         <tr>
-          <td>ENGINE NO</td>
+          <td class="td-1">ENGINE NO</td>
           <td>234423</td>
         </tr>
         <tr>
-          <td>MAKE</td>
+          <td class="td-1">MAKE</td>
           <td>HONDA</td>
         </tr>
         <tr>
-          <td>MODEL</td>
+          <td class="td-1">MODEL</td>
           <td>ACTIVA</td>
         </tr>
         <tr>
-          <td>DATE OF REGISTRATION</td>
+          <td class="td-1">DATE OF REGISTRATION</td>
           <td>07/06/2020</td>
         </tr>
         <tr>
-          <td>YEAR OF MANUFACTURE</td>
+          <td class="td-1">YEAR OF MANUFACTURE</td>
           <td>2018</td>
         </tr>
         <tr>
-          <td>COLOR</td>
+          <td class="td-1">COLOR</td>
           <td>BLACK</td>
         </tr>
         <tr>
-          <td>ODOMETER</td>
+          <td class="td-1">ODOMETER</td>
           <td>334</td>
         </tr>
         <tr>
-          <td>FUEL MODE</td>
+          <td class="td-1">FUEL MODE</td>
           <td>PETROL</td>
         </tr>
         <tr>
-          <td>R.C VERIFIED</td>
+          <td class="td-1">R.C VERIFIED</td>
           <td>YES</td>
         </tr>
         </table>

@@ -155,7 +155,7 @@ class HomeController extends CI_Controller {
 	{
 	$pdf = new \Mpdf\Mpdf([
 		    'mode' => 'c',
-		    'margin_top' => 30,
+		    'margin_top' => 26,
 		    'margin_right' => 2,
 		    'margin_left' => 2,
 		    'margin_bottom' => 0,

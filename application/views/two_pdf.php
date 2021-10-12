@@ -37,7 +37,10 @@ table {
   width: 48.7%;
   padding: 5px;
 }
-
+.td-1
+{
+  width: 40%;
+}
 
 </style>
 <div class="container">
