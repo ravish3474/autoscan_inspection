@@ -72,152 +72,222 @@ table {
             <th style="text-align:left">REMARKS</th>
           </tr>
           <tr>
+            <td>FR PANEL/HOOD</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
             <td>FR FENDER</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FR WHEEL RIM</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>FR FORK ASSLY</td>
+            <td>FR APRON PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>RH FR SHOCKER</td>
+            <td>RH PILLAR FRONT-A</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>HEAD LIGHT</td>
+            <td>RH FR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>FR CENTER COVER</td>
+            <td>RH PILLAR CENTER-B</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>RH FR PANEL</td>
+            <td>RH RR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH FR PANEL</td>
+            <td>RH RUNNING BOARD</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH FR INDICATOR LT</td>
+            <td>RH QTR PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH FR INDICATOR LT</td>
+            <td>DICKY/BACK DOOR</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>HANDLE BAR</td>
+            <td>LH QTR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>SPEEDOMETER ASSLY</td>
+            <td>LH RUNNING BOARD</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>UTILITY BOX</td>
+            <td>LH RR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RR BODY</td>
+            <td>LH PILLAR CENTER-B</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH RR COWL PANEL</td>
+            <td>LH FR DOOR PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>LH RR COWL PANEL</td>
+            <td>LH PILLAR FRONT-A</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>RH RR INDICATOR LT</td>
+            <td>LH FENDER PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>LH RR INDICATOR LT</td>
+            <td>LH APRON PANEL</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>TAIL LIGHT ASSLY</td>
+            <td>ROOF PANEL</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>SEAT</td>
+            <td>FLOOR PANEL</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+       <table class="table">
+          <tr style="background-color:#ffe600;">
+            <th style="text-align:left">BODY FITTINGS</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td>FRONT BUMPER</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>SILENSOR ASSLY</td>
+            <td>FR GRILL</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RH REAR VIEW MIRROR</td>
             <td></td>
             <td></td>
           </tr>
            <tr>
-            <td>CHASSIS FRAME</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>FR FOOTBOARD PANEL</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>RR WHEEL RIM</td>
-            <td></td>
-            <td></td>
-          </tr>
-           <tr>
-            <td>SPARE WHEEL RIM</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>RH RAER VIEW MIRROR</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
             <td>LH REAR VIEW MIRROR</td>
             <td></td>
             <td></td>
           </tr>
+          <tr>
+            <td>RR BUMPER</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <table class="table">
+          <tr style="background-color:#ffe600;">
+            <th style="text-align:left">LIGHTS AND LAMPS</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td>RH HEAD LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>LH HEAD LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RH FOG LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
            <tr>
+            <td>LH FOG LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RH TAIL LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>LH TAIL LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+      <table class="table">
+          <tr style="background-color:#ffe600;">
+            <th style="text-align:left">COOLING SYSTEM</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td>CONDENSOR</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RADIATOR</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RH FOG LAMP</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+       <table class="table">
+          <tr style="background-color:#ffe600;">
+            <th style="text-align:left">INTERIORS</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td>INSTRUMENT PANEL</td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+       <table class="table">
+          <tr style="background-color:#ffe600;">
+            <th style="text-align:left">OTHERS</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
             <td>BATTERY</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>ENGINE CHAMBER</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>FUEL TANK</td>
+            <td>TYRE CONDITION</td>
             <td></td>
             <td></td>
           </tr>
@@ -237,7 +307,7 @@ table {
           <td>1155</td>
         </tr>
         <tr>
-          <td>AGENT CODENAME</td>
+          <td>AGENT CODE/NAME</td>
           <td>13/03/2020 16:20HRS</td>
         </tr>
       </table> 
@@ -289,6 +359,41 @@ table {
           <td>R.C VERIFIED</td>
           <td>YES</td>
         </tr>
+        </table>
+        <table class="table mt-2">
+          <tr style="background-color: #ffe600;">
+            <th style="text-align:left">ACCESSORIES</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td class="td-1">STEREO</td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td class="td-1">CENTER LOCK</td>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </table>
+        <table class="table mt-2">
+          <tr style="background-color: #ffe600;">
+            <th style="text-align:left">GLASSES</th>
+            <th style="text-align:left">DESCRIPTION</th>
+            <th style="text-align:left">REMARKS</th>
+          </tr>
+          <tr>
+            <td class="td-1">FR WS GLASS</td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td class="td-1">RR WS GLASS</td>
+            <td></td>
+            <td></td>
+          </tr>
       </table>
       <table class="table mt-2">
         <tr style="background-color: #ffe600;">
