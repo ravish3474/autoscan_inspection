@@ -909,7 +909,7 @@ $(document).on('submit','#create_task',function(e){
 </script> 
 <script>
 $('#select_all').change(function() {
-    var checkboxes = $('input[name=all_pics]');
+    var checkboxes = $('input[name=all_pics[]]');
     checkboxes.prop('checked', $(this).is(':checked'));
   });
 </script>

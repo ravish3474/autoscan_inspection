@@ -100,3 +100,4 @@ $route['worksheet'] = 'CoordinatorController/worksheet';
 $route['view-edit-case/(:any)'] = 'CasesController/view_edit_case/$1';
 $route['upload-pics'] = 'QualityController/upload_pics';
 $route['qc-two-wheeler'] = 'QualityController/qc_two_wheeler';
+$route['qc-pvt-cars'] = 'QualityController/qc_pvt_car';
