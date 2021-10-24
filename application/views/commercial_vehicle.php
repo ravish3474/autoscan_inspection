@@ -39,7 +39,7 @@ table{
 }
 .form-control{
 font-size: 14px !important;
-    height: 26px !important;+
+    height: 26px !important;
     padding: 2px 6px !important;
 }
 
@@ -64,6 +64,7 @@ label{
     color: #FFF;
     text-align: center;
 }
+
 </style>
 
     <section class="content">
@@ -73,18 +74,19 @@ label{
                 <div class="app-main__inner">
                     <div class="tabs-animation">
                         <div class="mb-3 card">
+                          <form id="create_task">
                             <div class="card-header-tab ">
                                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                    <table class="table  tabl_back">
                                        <tr>
-                                           <td><strong>Insured/Customer Name </strong><input type="text" value="" name="bank_name"></td>
-                                           <td><strong>Address: </strong><span><input type="text" name="field_executive" value="" name="bank_name"></span></td>
+                                           <td><strong>Insured/Customer Name </strong><input type="text" value="" name="customer_name"></td>
+                                           <td><strong>Address: </strong><span><input type="text" value="" name="address"></span></td>
                                          
                                        </tr>
                                         <tr>
-                                            <td><strong>Request Date: </strong><span><input type="text" value="" name="field_contact"></span></td>
-                                           <td><strong>Request Time: </strong><span><input type="text" value="" name="agent_name"></span></td>
-                                            <td><strong>Inspection Date & Time: </strong><span><input type="text" value="" name="field_contact"></span></td>
+                                            <td><strong>Request Date: </strong><span><input type="text" value="" name="request_date"></span></td>
+                                           <td><strong>Request Time: </strong><span><input type="text" value="" name="request_time"></span></td>
+                                            <td><strong>Inspection Date & Time: </strong><span><input type="text" value="" name="isp_date_time"></span></td>
                                        </tr>
                                    </table>
                                 </div>
@@ -109,7 +111,7 @@ label{
                                       <li class="mb-2">
                                             <div id="picture">
                                                 <a class="small" href="#nogo" title="small image">
-                                                   <input type="checkbox" name="all_pics" value="<?=$pic_tures?>" class="chk-box checker_dude">
+                                                   <input type="checkbox" name="all_pics[]" value="<?=$pic_tures?>" class="chk-box checker_dude">
                                                     <img src="<?=base_url()?>upload/images/<?=$pic_tures?>"class="w_80" title="small image" />
                                                     <img class="large" src="<?=base_url()?>upload/images/<?=$pic_tures?>" title="large image" />
                                                 </a>
@@ -142,7 +144,6 @@ label{
                               </div>
 
                               <div class="col-md-9">
-                                 <form id="">
                                   <div class="">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -155,201 +156,189 @@ label{
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">CABIN CONDITION</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
-                                                            <option value="Good" selected="">Good</option>
-                                                            <option value="Average" >Average</option>
+                                                       <select name="cabin_condition_desc" class="form-control">
+                                                            <option selected value="Good">Good</option>
+                                                            <option value="Average">Average</option>
                                                             <option value="Poor" >Poor</option>
                                                         </select>
+                                                        <input type="hidden" name="case_id" value="<?=base64_decode($case_id)?>">
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="cabin_condition_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">FR PANEL/HOOD</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="fr_panel_hood_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                             <option value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
-                                                    </div>
-                                               </div>
-                                               <div class="row mx-0 form-group">
-                                                    <label class="col-md-4 pr-0">FR GRILL</label>
-                                                    <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
-                                                            <option value="Intact" selected="">Intact</option>
-                                                            <option value="Broken" >Broken</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="fr_panel_hood_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH FENDER</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_fender_desc" class="form-control">
                                                              <option value="Intact" selected="">Intact</option>
-                                                            <option value="Leak" >Leak</option>
+                                                             <option value="Dented" >Dented</option>
+                                                             <option value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_fender_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH PILLAR FRONT-A</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_pillar_front_a_desc" class="form-control">
                                                           <option value="Intact" selected="">Intact</option>
-                                                            <option value="Leak" >Leak</option>
+                                                            <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_pillar_front_a_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH DOOR PANEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
-                                                            <option value="Intact" selected="">Intact</option>
-                                                           <option value="Broken" >Broken</option>
+                                                       <select name="rh_door_panel_desc" class="form-control">
+                                                           <option value="Intact" selected="">Intact</option>
+                                                           <option value="Dented" >Dented</option>
+                                                           <option value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_door_panel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH DOOR PANEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
-                                                             <option value="Intact" selected="">Intact</option>
-                                                            <option value="Broken" >Broken</option>
+                                                       <select name="lh_door_panel_desc" class="form-control">
+                                                           <option value="Intact" selected="">Intact</option>
+                                                           <option value="Dented" >Dented</option>
+                                                           <option value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_door_panel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH WHEEL ARC/FOOTBOARD</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_wheel_arc_footboard_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
-                                                            <option value="Scratch" >Scratch</option>
-                                                            <option value="Dented" >Dented</option>
+                                                            <option value="Dented" selected="">Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_wheel_arc_footboard_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH RR PILLAR</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_rr_pillar_desc" class="form-control">
                                                            <option value="Intact" selected="">Intact</option>
-                                                            <option value="Scratch" >Scratch</option>
-                                                            <option value="Dented" >Dented</option>
+                                                           <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_rr_pillar_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">CABIN BACK PANEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="cabin_back_panel_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
-                                                            <option value="Missing" >Missing</option>
-                                                            <option value="Missing" >Broken</option>
+                                                            <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="cabin_back_panel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH RR PILLAR</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_rr_pillar_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_rr_pillar_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH RR PANEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_rr_panel_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_rr_panel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH WHEEL ARC/FOOTBOARD</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_wheel_arc_footboard_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_wheel_arc_footboard_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
-                                                    <label class="col-md-4 pr-0">LH FENDER PANEL</label>
+                                                    <label class="col-md-4 pr-0">LH FENDER</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_fender_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Scratch" >Scratch</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_fender_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">CABIN ROOF/SHEET</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="cabin_roof_sheet_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
-                                                            <option value="Scratch" >Scratch</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="cabin_roof_sheet_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">FRONT BUMPER</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="front_bumper_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Scratch" >Scratch</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="front_bumper_rem">
                                                     </div>
                                                </div>
                                                <div class=" row border-bottom mb-2">
@@ -360,61 +349,61 @@ label{
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">FR SHOW GRILL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="fr_show_grill_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="fr_show_grill_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH HEAD LAMP BAZEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_head_lamp_bazel_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_head_lamp_bazel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH HEAD LAMP</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_head_lamp_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_head_lamp_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH HEAD LAMP BAZEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_head_lamp_bazel_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_head_lamp_bazel_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH HEAD LAMP</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_head_lamp_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_head_lamp_rem">
                                                     </div>
                                                </div>
                                                <div class=" row border-bottom mb-2">
@@ -425,51 +414,52 @@ label{
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">BODY STYLE</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="body_style_desc" class="form-control">
                                                             <option value="Open" selected="">Open</option>
+                                                            <option value="Tipper" >Tipper</option>
                                                             <option value="Closed" >Closed</option>
                                                             <option value="Trailer" >Trailer</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="body_style_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">BODY CONDITION</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="body_condition_desc" class="form-control">
                                                             <option value="Good" selected="">Good</option>
                                                             <option value="Average" >Average</option>
                                                             <option value="Poor" >Poor</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="body_condition_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RH BODY WING</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="rh_body_wing_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_body_wing_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">LH BODY WING</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="lh_body_wing_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_body_wing_rem">
                                                     </div>
                                                </div>
                                                <div class=" row border-bottom mb-2">
@@ -481,15 +471,29 @@ label{
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">RADIATOR</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="radiator_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="radiator_rem">
                                                     </div>
                                                </div>
+
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">INTERCOOLER</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="intercooler_desc" class="form-control">
+                                                            <option value="Intact" selected="">Intact</option>
+                                                            <option value="Damage" >Damage</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="N/A" class="form-control" name="intercooler_rem">
+                                                    </div>
+                                               </div>
+
                                                <div class=" row border-bottom mb-2">
                                                     <h6 class="col-md-4 p-2 bg-border">OTHERS</h6>
                                                     <h6 class="col-md-4 p-2 bg-border">DESCRIPTION</h6>
@@ -498,73 +502,123 @@ label{
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">INSTRUMENT PANEL</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="instrument_panel_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="instrument_panel_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">ENGINE HOOD</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="engine_hood_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Dented" >Dented</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="engine_hood_rem">
                                                     </div>
                                                </div>
                                                  <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">DIESEL TANK</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="diesel_tank_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="diesel_tank_rem">
                                                     </div>
                                                </div>
                                                  <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">SILENSOR ASSLY</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="silensor_assly_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="silensor_assly_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">WHEEL RIMS</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="wheel_rims_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Damage" >Damage</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="wheel_rims_rem">
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">BATTERY</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="battery_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Missing" >Missing</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="battery_rem">
+                                                    </div>
+                                               </div>
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">RH FENDER CLIDING</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="rh_fender_cliding_desc" class="form-control">
+                                                            <option value="Intact" selected="">Intact</option>
+                                                            <option value="Missing" >Missing</option>
+                                                            <option value="Damage" >Damage</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_fender_cliding_rem">
+                                                    </div>
+                                               </div>
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">LH FENDER CLIDING</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="lh_fender_cliding_desc" class="form-control">
+                                                            <option value="Intact" selected="">Intact</option>
+                                                            <option value="Missing" >Missing</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_fender_cliding_rem">
+                                                    </div>
+                                               </div>
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">LH REAR VIEW MIRROR</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="lh_rear_view_mirror_desc" class="form-control">
+                                                            <option value="Intact" selected="">Intact</option>
+                                                            <option value="Missing" >Missing</option>
+                                                            <option value="Damage" >Damage</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="N/A" class="form-control" name="lh_rear_view_mirror_rem">
+                                                    </div>
+                                               </div>
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">RH REAR VIEW MIRROR</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="rh_rear_view_mirror_desc" class="form-control">
+                                                            <option value="Intact" selected="">Intact</option>
+                                                            <option value="Missing" >Missing</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="N/A" class="form-control" name="rh_rear_view_mirror_rem">
                                                     </div>
                                                </div>
                                             </div>
@@ -578,19 +632,19 @@ label{
                                             <div class="row mx-0 form-group">
                                                     <label class="col-md-6">INSURER</label>
                                                     <div class="col-md-6 d-flex">
-                                                        <input type="text" value=""  name="insurer" class="form-control"> 
+                                                        <input type="text" value=""  name="insurer_qc" class="form-control"> 
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-6">AGENT BRANCH</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control" >
+                                                        <input type="text" value="" name="agent_branch_qc" class="form-control" >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">AGENT CODE NAME</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_code" class="form-control" >
+                                                        <input type="text" value="" name="agent_code_qc" class="form-control" >
                                                     </div>
                                                </div>
                                            		 <div class="row border-bottom mb-2">
@@ -600,73 +654,67 @@ label{
                                             <div class="row mx-0 form-group">
                                                     <label class="col-md-6">VEHICLE NO</label>
                                                     <div class="col-md-6 d-flex">
-                                                        <input type="text" value="" class="form-control" name="insurer"> 
+                                                        <input type="text" value="" class="form-control" name="vehicle_num_qc"> 
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-6">CHASSIS NO</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="chassis_num_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">ENGINE NO</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="engine_num_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">MAKE </label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="make_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">MODEL </label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="model_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">DATE OF REGISTRATION</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="date_of_reg_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">YEAR OF MANUFACTURE</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="year_of_manufacture_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">COLOR</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="color_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">ODOMETER</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="odometer_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">FUEL MODE</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="fuel_mode_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row mx-0 form-group">
                                                     <label class="col-md-6">R.C. VERIFIED</label>
                                                     <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
-                                                    </div>
-                                               </div>
-                                                <div class="row mx-0 form-group">
-                                                    <label class="col-md-6">FITNESS VALID</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" value="" name="agent_branch" class="form-control " >
+                                                        <input type="text" value="" name="rc_verified_qc" class="form-control " >
                                                     </div>
                                                </div>
                                                 <div class="row border-bottom mb-2">
@@ -677,7 +725,7 @@ label{
                                                   <div class="row mx-0 form-group">
                                                     <label class="col-md-4 pr-0">FR WINDSHIELD GLASS</label>
                                                     <div class="col-md-4 pr-0">
-                                                       <select name="rh_front" class="form-control">
+                                                       <select name="fr_windshield_glass_desc" class="form-control">
                                                             <option value="Intact" selected="">Intact</option>
                                                             <option value="Broken" >Broken</option>
                                                             <option value="Scar" >Scar</option>
@@ -685,7 +733,7 @@ label{
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
-                                                        <input type="text" value="N/A" class="form-control" name="">
+                                                        <input type="text" value="N/A" class="form-control" name="fr_windshield_glass_rem">
                                                     </div>
                                                </div>
                                                  <div class="border-bottom mb-2">
@@ -693,15 +741,15 @@ label{
                                                </div>
                                                 <div class="row mx-0 form-group d-flex">
                                                     <div class="form-check form-check-inline">
-                                                      <input type="radio" id="radio1" value="option1" name="recomm" checked="">
+                                                      <input type="radio" id="radio1" value="Yes" name="recomm" checked="">
                                                       <label class="form-check-label pl-2" for="radio1">Yes</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                      <input type="radio" id="radio2" value="option2" name="recomm">
+                                                      <input type="radio" id="radio2" value="No" name="recomm">
                                                       <label class="form-check-label pl-2" for="radio2">No</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                      <input  type="radio" id="radio3" value="option3" name="recomm">
+                                                      <input  type="radio" id="radio3" value="On Hold" name="recomm">
                                                       <label class="form-check-label pl-2" for="radio3">On Hold</label>
                                                     </div>
                                                </div>
@@ -795,10 +843,33 @@ $(document).on('submit','#pic_form',function(e){
     })
 })
 
+$(document).on('submit','#create_task',function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formdata = new FormData(form[0]);
+    $.ajax({
+        type:'POST',
+        data:formdata,
+        processData:false,
+        contentType:false,
+        url:'<?=base_url()?>qc-commercial',
+        success:function(response){
+            var response = JSON.parse(response);
+            if(response.status==1){
+                swal('Success',response.msg,'success');
+                //location.reload();
+            }
+            else{
+                swal('Error',response.msg,'error');
+            }
+        }
+    })
+})
+
 </script> 
 <script>
 $('#select_all').change(function() {
-    var checkboxes = $('input[name=all_pics]');
+    var checkboxes = $('input[name=all_pics[]]');
     checkboxes.prop('checked', $(this).is(':checked'));
   });
 </script>

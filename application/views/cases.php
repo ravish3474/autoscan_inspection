@@ -46,6 +46,7 @@ th{
                                     <tr>
                                       <th>Date</th>
                                       <th>City</th>
+                                      <th>Vehicle Class</th>
                                       <th>Location</th>
                                       <th>Purpose</th>
                                       <th>Proposer Name</th>
@@ -65,6 +66,7 @@ th{
                                     <tr>
                                       <td><?=$case['request_date']?></td>
                                       <td><?=$case['c_city']?></td>
+                                      <td><?=$case['vehicle_class']?></td>
                                       <td><?=$case['location']?></td>
                                       <td><?=$case['reason']?></td>
                                       <td><?=$case['agent_name']?></td>
