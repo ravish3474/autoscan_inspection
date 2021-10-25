@@ -5,7 +5,7 @@
             
         </div>
         <!-- Basic Examples -->
-        <div class="row clearfix">
+        <div class="row clearfix mt-2">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="body">
                         <div class="w-100 mb-4" >
-                            <label class="btn btn-info p-4" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Create Coordinator</label> 
+                            <label class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Create Coordinator</label> 
                         </div>
                         <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable text-center">
