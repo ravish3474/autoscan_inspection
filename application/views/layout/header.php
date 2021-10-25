@@ -154,37 +154,37 @@ label{
         <ul class="nav">
           <li class="active">
                         <a href="<?=base_url('Homecontroller/')?>">
-                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <i class="side-icon fa fa-tachometer" aria-hidden="true"></i>
                             <span class="side-content">Home</span>
                         </a>
                     </li>
                      <li >
                         <a href="<?=base_url('new-cases')?>">
-                        <i class="fa fa-briefcase"></i>
+                        <i class="side-icon fa fa-briefcase"></i>
                             <span class="side-content">Cases</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('create-coordinator')?>">
-                        <i class="fa fa-user"></i>
+                        <i class="side-icon fa fa-user"></i>
                             <span class="side-content">Manage Coordinator</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('manage-field-executive')?>">
-                        <i class="fa fa-user"></i>
+                        <i class="side-icon fa fa-user"></i>
                             <span class="side-content">Manage FE</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('agents')?>">
-                        <i class="fa fa-user"></i>
+                        <i class="side-icon fa fa-user"></i>
                             <span class="side-content">Mange Agents</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('intimation-form')?>">
-                        <i class="fa fa-list"></i>
+                        <i class="side-icon fa fa-list"></i>
                             <span class="side-content">Intimation Form</span>
                         </a>
                     </li>
@@ -192,7 +192,7 @@ label{
                    
                      <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                        <i class='fa fa-building'></i>
+                        <i class='side-icon fa fa-building'></i>
                             <span class="side-content">Manage Companies</span>
                         </a>
                         <ul class="ml-menu list-unstyled">
@@ -210,13 +210,13 @@ label{
                    
                      <li>
                         <a href="<?=base_url('Homecontroller/create_task')?>">
-                        <i class="fa fa-lock"></i>
+                        <i class="side-icon fa fa-lock"></i>
                             <span class="side-content">Password</span>
                         </a>
                     </li>
                      <li>
                         <a href="<?=base_url('logout')?>">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <i class="side-icon fa fa-sign-out" aria-hidden="true"></i>
                             <span class="side-content">Logout</span>
                         </a>
                     </li>
@@ -274,19 +274,27 @@ label{
         </div>
       </nav>
 <script>
-$(document).ready(function(){
+$(document).ready(function(){  
   $(".opennavbar").click(function(){
     $(".main-panel").toggleClass('mainPanel_10px');
     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
     $(".img-fluid").toggleClass("invisible mb-4");
-    $("i").toggleClass("mb-4");
+    $(".side-icon").toggleClass("mb-4");
     $(".side-content").toggleClass("d-none");
     $(".logo_span").toggleClass("d-block");
     $("a").toggleClass("shadow-none");
    
   });
 });
-
+$( document ).ready(function() {
+    $(".main-panel").toggleClass('mainPanel_10px');
+    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+    $(".img-fluid").toggleClass("invisible mb-4");
+    $(".side-icon").toggleClass("mb-4");
+    $(".side-content").toggleClass("d-none");
+    $(".logo_span").toggleClass("d-block");
+    $("a").toggleClass("shadow-none");
+});
 </script>
 <div class="content mt-n2 px-0">
 
