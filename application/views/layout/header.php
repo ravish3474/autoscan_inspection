@@ -141,6 +141,10 @@ label{
     position: relative;
     visibility: unset;
 }
+.padding-none
+{
+  padding:unset !important;
+}
   </style>
 <body>
   <div class="wrapper ">
@@ -153,19 +157,19 @@ label{
       
         <ul class="nav">
           <li class="active">
-                        <a href="<?=base_url('Homecontroller/')?>">
+                        <a class="new-padd" href="<?=base_url('Homecontroller/')?>">
                         <i class="side-icon fa fa-tachometer" aria-hidden="true"></i>
                             <span class="side-content">Home</span>
                         </a>
                     </li>
                      <li >
-                        <a href="<?=base_url('new-cases')?>">
+                        <a class="new-padd" href="<?=base_url('new-cases')?>">
                         <i class="side-icon fa fa-briefcase"></i>
                             <span class="side-content">Cases</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?=base_url('create-coordinator')?>">
+                        <a class="new-padd" href="<?=base_url('create-coordinator')?>">
                         <i class="side-icon fa fa-user"></i>
                             <span class="side-content">Manage Coordinator</span>
                         </a>
@@ -283,7 +287,7 @@ $(document).ready(function(){
     $(".side-content").toggleClass("d-none");
     $(".logo_span").toggleClass("d-block");
     $("a").toggleClass("shadow-none");
-   
+    $(".new-padd").toggleClass("padding-none");
   });
 });
 $( document ).ready(function() {
@@ -294,6 +298,7 @@ $( document ).ready(function() {
     $(".side-content").toggleClass("d-none");
     $(".logo_span").toggleClass("d-block");
     $("a").toggleClass("shadow-none");
+    $(".new-padd").toggleClass("padding-none");
 });
 </script>
 <div class="content mt-n2 px-0">
