@@ -141,6 +141,8 @@ class CasesController extends CI_Controller {
     }
 
     public function create_case(){
+        $prefix = $this->input->post('prefix_ins');
+        $prefix = $prefix."-".date("Y")."-";
         $coord_id = $_SESSION['user_data'][0]['admin_id'];
         $isp_branch = $this->input->post('isp_branch');
         $assigned_fe = $this->input->post('assigned_fe');
@@ -153,14 +155,26 @@ class CasesController extends CI_Controller {
         }
         $case_status = $assigned_fe == "" ? 0 : 1;
         unset($_POST['isp_branch']);
+        unset($_POST['prefix_ins']);
         $_POST['source_branch'] = $source_branch;
         $_POST['destination_branch'] = $destination_branch;
         $_POST['coordinator_id'] = $isp_branch;
         $_POST['case_status'] = $case_status;
         $table = "cases";
-        $insert = $this->CommonModel->insert_function($table,$_POST);
+        $insert = $this->CommonModel->insert_last_function($table,$_POST);
         if ($insert) {
-            die(json_encode(array('status'=>'1','msg'=>'Case Added Successfully')));
+            $ref_no = $prefix.$insert;
+            $case_id = $insert;
+            $condition = array('case_id'=>$case_id);
+            $table = "cases";
+            $data = array('ref_no'=>$ref_no);
+            $update = $this->CommonModel->update_table($table,$data,$condition);
+            if ($update) {
+                die(json_encode(array('status'=>'1','msg'=>'Case Added Successfully')));
+            }
+            else{
+                die(json_encode(array('status'=>'0','msg'=>'Something Went Wrong')));
+            }
         }
         else{
             die(json_encode(array('status'=>'0','msg'=>'Something Went Wrong')));

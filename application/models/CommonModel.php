@@ -41,6 +41,16 @@ class CommonModel extends CI_Model{
           }
 	}
 
+	public function insert_last_function($table,$data){ // insert into database
+          if($this->db->insert($table, $data)){
+          	$insert_id = $this->db->insert_id();
+   			return  $insert_id;
+          }
+          else{
+          	return false;
+          }
+	}
+
 	public function fetch_data($table,$where = ''){
 		$this->db->select('*');
 		$this->db->from($table);

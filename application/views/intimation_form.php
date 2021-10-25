@@ -42,9 +42,10 @@
                                                         <?php
                                                         foreach ($companies as $comp) {
                                                         ?>
-                                                        <option value="<?=$comp['company_name']?>" company_id="<?=$comp['company_id']?>"><?=$comp['company_name']?></option>
+                                                        <option value="<?=$comp['company_name']?>" company_id="<?=$comp['company_id']?>" prefix_ins="<?=$comp['company_code']?>"><?=$comp['company_name']?></option>
                                                       <?php } ?>
                                                     </select>
+                                                    <input type="hidden" name="prefix_ins" id="prefix_ins">
                                                 </div>
                                            </div>
                                    </div><div class="col-md-6">
@@ -417,6 +418,8 @@ $(document).on('change','#veh_model',function(){
 
 $(document).on('change','#change_insurance',function(){
   var company_id = $('option:selected', this).attr('company_id');
+  var prefix_ins = $('option:selected', this).attr('prefix_ins');
+  $('#prefix_ins').val(prefix_ins);
   $.ajax({
     type:'POST',
     data:{

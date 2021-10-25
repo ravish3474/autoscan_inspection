@@ -45,6 +45,7 @@ th{
                                   <thead class="">
                                     <tr>
                                       <th>Date</th>
+                                      <th>Request No.</th>
                                       <th>City</th>
                                       <th>Vehicle Class</th>
                                       <th>Location</th>
@@ -65,6 +66,7 @@ th{
                                     ?>
                                     <tr>
                                       <td><?=$case['request_date']?></td>
+                                      <td><?=$case['ref_no']?></td>
                                       <td><?=$case['c_city']?></td>
                                       <td><?=$case['vehicle_class']?></td>
                                       <td><?=$case['location']?></td>

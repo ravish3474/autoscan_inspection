@@ -22,6 +22,7 @@
                                         <tr>
                                             <th  class="text-center">#</th>
                                             <th  class="text-center">Insurance Company Name</th>
+                                            <th  class="text-center">Insurance Company Code</th>
                                             <th  class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -29,6 +30,7 @@
                                         <tr>
                                             <th  class="text-center">#</th>
                                             <th  class="text-center">Insurance Company Name</th>
+                                            <th  class="text-center">Insurance Company Code</th>
                                             <th  class="text-center">Action</th>
                                         </tr>
                                     </tfoot>
@@ -40,6 +42,7 @@
                                         <tr>
                                             <td><?=$count?></td>
                                             <td><?=$company_name['company_name']?></td>
+                                            <td><?=$company_name['company_code']?></td>
                                             <td>
                                                  <span class="rounded p-2 editor" comp_id="<?=$company_name['company_id']?>"><i class="fa fa-edit"></i></span>
                                             <a href="#">
@@ -70,13 +73,16 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                   <div class="">
                     <form id="add_ins_comp">
                          <label class="form-group">
                             Insurance Company
                             <input type="text" name="company_name" placeholder="Enter Insurance Company Name" class="form-control " required="">
                         </label>
-                        </div>
+
+                        <label class="form-group">
+                            Company Code
+                            <input type="text" name="company_code" placeholder="Enter Insurance Company Code" class="form-control " required="">
+                        </label>
                         <div class="text-center mt-4">
                             <button class="btn btn-success" type="submit">Submit</button>
                         </div>
@@ -108,6 +114,10 @@
                         <input type="text" name="company_name" placeholder="Enter Insurance Company Name" id="ins_company" class="form-control ">
                         <input type="hidden" name="company_id" value="" id="company_id">
                     </label>
+                    <label class="form-group">
+                            Company Code
+                            <input type="text" name="company_code" placeholder="Enter Insurance Company Code" id="ins_code" class="form-control " required="">
+                        </label>
                     <div class="text-center mt-4">
                         <button class="btn btn-success" type="submit">Update</button>
                     </div>
@@ -155,6 +165,7 @@ $(document).on("click",".editor",function(){
         success:function(response){
             var response = JSON.parse(response);
             if (response.status==1) {
+                $('#ins_code').val(response.data[0].company_code);
                 $('#ins_company').val(response.data[0].company_name);
                 $('#company_id').val(response.data[0].company_id);
                 $('#update_insurance').modal('show');
