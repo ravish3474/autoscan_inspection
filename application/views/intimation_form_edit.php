@@ -245,7 +245,7 @@
                                             <label class="col-md-6">Appoint Time</label>
                                             <div class="col-md-6 d-flex">                                            
                                                 <div class="form-line">
-                                                    <input type="text" readonly="" name="appoint_time" class="form-control " value="<?=$c_nator[0]['appoint_time']?>" required="">
+                                                    <input type="time" name="appoint_time" class="form-control " value="<?=$c_nator[0]['appoint_time']?>" required="">
                                                 </div> <span> ( 24Hr Format )</span>
                                             </div>
                                            </div>

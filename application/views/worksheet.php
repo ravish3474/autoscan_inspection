@@ -87,7 +87,7 @@
                 <table class="main-table">
                 <thead>
                     <tr>
-                        <th class="fixed-side" scope="col">Names</th>
+                        <th class="fixed-side" scope="col">FE Names</th>
                         <?php
                             for($i = 7 ; $i <=21 ; $i++){
                                 echo "<th  scope='col'>".$i."-".($i+1)."</th>";
@@ -98,25 +98,205 @@
                 <tbody>
                     <?php
                     foreach ($fields as $field) {
+                    $assigned_fe = $field['fe_id'];
+                    $sql ="SELECT * FROM cases WHERE assigned_fe='$assigned_fe'";
+                    $query = $this->db->query($sql);
                     ?>
                     <tr>
                     <th class="fixed-side"><?=$field['fe_name']?></th>
-                        <td>Cell content<br>
-                            test<br></td>
-                        <td><a href="#">Cell content longer</a></td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
-                        <td>Cell content</td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('7:00');
+                                $end = new DateTime('8:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('8:00');
+                                $end = new DateTime('9:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('9:00');
+                                $end = new DateTime('10:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('10:00');
+                                $end = new DateTime('11:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('11:00');
+                                $end = new DateTime('12:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('12:00');
+                                $end = new DateTime('13:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('13:00');
+                                $end = new DateTime('14:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('14:00');
+                                $end = new DateTime('15:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('15:00');
+                                $end = new DateTime('16:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('16:00');
+                                $end = new DateTime('17:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('17:00');
+                                $end = new DateTime('18:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('18:00');
+                                $end = new DateTime('19:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('19:00');
+                                $end = new DateTime('20:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('20:00');
+                                $end = new DateTime('21:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
+                        <td>
+                            <?php
+                            foreach ($query->result() as $row){
+                                $now = new DateTime($row->appoint_time);
+                                $begin = new DateTime('21:00');
+                                $end = new DateTime('22:00');
+                                if ($now >= $begin && $now <= $end){
+                            ?>
+                            <?=$row->ref_no?><br>
+                            <?=$row->insured_name?><br>
+                            <?=$row->contact_number?><br><br>
+                        <?php } }?>
+                        </td>
                     
                     </tr>
                     <?php

@@ -102,3 +102,7 @@ $route['upload-pics'] = 'QualityController/upload_pics';
 $route['qc-two-wheeler'] = 'QualityController/qc_two_wheeler';
 $route['qc-pvt-cars'] = 'QualityController/qc_pvt_car';
 $route['qc-commercial'] = 'QualityController/qc_commercial';
+$route['add-make-model'] = 'MakeController';
+$route['add-make-model-ajax'] = 'MakeController/add_make_model_ajax';
+$route['manage-make-model'] = 'MakeController/manage_make_model';
+$route['manage-make-model/(:num)'] = 'MakeController/manage_make_model/$1';

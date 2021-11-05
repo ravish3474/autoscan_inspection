@@ -26,7 +26,7 @@ date_default_timezone_set('Asia/Kolkata');
 */
 // $config['base_url'] = 'http://192.168.29.234/autoscan_inspection/';
 
-$config['base_url'] = 'http://localhost/autoscan_inspection/';
+$config['base_url'] = 'http://192.168.0.102/autoscan_inspection/';
 
 /*
 |--------------------------------------------------------------------------

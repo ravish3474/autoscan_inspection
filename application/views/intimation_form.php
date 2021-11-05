@@ -259,7 +259,7 @@
                                    </div>
                                                                      <div class="col-md-6">
                                     <div class="row mx-0 form-group">
-                                                <label class="col-md-6">Select Vendor</label>
+                                                <label class="col-md-6">Select FE</label>
                                                   <div class="col-md-6">
                                                     <select name="assigned_fe" class="form-control" id="fe_id">
                                                     </select>

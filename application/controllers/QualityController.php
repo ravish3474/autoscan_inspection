@@ -399,6 +399,10 @@ class QualityController extends CI_Controller {
         $table = "vehicle_pics";
         $condition = array('case_id'=>$case_id);
         $data['vehicle_pics'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "cases";
+        $data['case_data'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "qc_pvt_cars";
+        $data['qc_data'] = $this->CommonModel->fetch_data($table,$condition);
         $this->load->view('layout/header');
         $this->load->view('pvt_cars',$data);
         $this->load->view('layout/footer');
@@ -410,6 +414,10 @@ class QualityController extends CI_Controller {
         $table = "vehicle_pics";
         $condition = array('case_id'=>$case_id);
         $data['vehicle_pics'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "cases";
+        $data['case_data'] = $this->CommonModel->fetch_data($table,$condition);
+        $table = "qc_commercial";
+        $data['qc_data'] = $this->CommonModel->fetch_data($table,$condition);
     	$this->load->view('layout/header');
 		$this->load->view('commercial_vehicle',$data);
 		$this->load->view('layout/footer');

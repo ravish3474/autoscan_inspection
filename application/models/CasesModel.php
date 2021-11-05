@@ -46,6 +46,24 @@ class CasesModel extends CI_Model{
 
     }
 
+    public function count_all_models($table){ 
+
+        $sql = "SELECT * FROM $table";
+
+        $query = $this->db->query($sql)->num_rows(); 
+
+        return $query; 
+
+    }
+
+    public function get_all_models($limit, $start,$table){ 
+
+        $sql = "SELECT * FROM $table LIMIT $start,$limit";
+		$query = $this->db->query($sql);
+    	return $query->result_array();
+
+    }
+
      public function get_users($limit, $start,$coord_id,$case_status){ 
 
         $sql = "SELECT 

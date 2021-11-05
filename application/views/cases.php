@@ -83,7 +83,7 @@ th{
                                         <?php
                                         if ($case['destination_branch']==0 || $case['destination_branch']==$_SESSION['user_data'][0]['admin_id']) {
                                         ?>
-                                        <span class="pointer p-1 assign_fe" data-toggle="tooltip" data-placement="top" case_id="<?=$case['case_id']?>" title="Assign FE"><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
+                                        <span class="pointer p-1 assign_fe" data-toggle="tooltip" data-placement="top" case_id="<?=$case['case_id']?>" title="Assign FE" fe_id="<?=$case['assigned_fe']?>"><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
                                         <?php
                                         }
                                         ?>
@@ -244,6 +244,7 @@ $(document).on('submit','#assign_fe_submit',function(e){
 
 $(document).on('click','.assign_fe',function(){
   var case_id = $(this).attr('case_id');
+  var fe_id = $(this).attr('fe_id');
   $.ajax({
     type:'GET',
     url:'<?=base_url()?>fetch-all-fe',
@@ -251,9 +252,15 @@ $(document).on('click','.assign_fe',function(){
       var response = JSON.parse(response);
       if (response.status==1) {
         var html = '';
-        html+='<option>--Select Field Executive--</option>';
+        html+='<option value="disabled">--Select Field Executive--</option>';
         for (var i = 0; i < response.data.length; i++) {
-            html+='<option value="'+response.data[i].fe_id+'">'+response.data[i].fe_name+'</option>';
+            if (response.data[i].fe_id==fe_id) {
+              var valer = "selected";
+            }
+            else{
+              var valer = "";
+            }
+            html+='<option '+valer+' value="'+response.data[i].fe_id+'">'+response.data[i].fe_name+'</option>';
         }
         $('#fe_case_id').val(case_id);
         $('#fe_form').empty();

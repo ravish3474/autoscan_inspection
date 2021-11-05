@@ -141,10 +141,6 @@ label{
     position: relative;
     visibility: unset;
 }
-.padding-none
-{
-  padding:unset !important;
-}
   </style>
 <body>
   <div class="wrapper ">
@@ -207,6 +203,25 @@ label{
                             
                                 <a href="<?=base_url('insurance-branch')?>">
                                   <span class="side-content">Add Branch</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                        <i class='side-icon fa fa-building'></i>
+                            <span class="side-content">Manage Make/Model</span>
+                        </a>
+                        <ul class="ml-menu list-unstyled">
+                            <li class="text-left pl-5">
+                                <a href="<?=base_url('add-make-model')?>"><span class="side-content">Add Make/Model</span></a>
+                            </li>
+                            <li  class="text-left pl-5">
+                            
+                                <a href="<?=base_url('manage-make-model')?>">
+                                  <span class="side-content">Manage Make/Model</span>
                                 </a>
                             </li>
                         </ul>
@@ -278,28 +293,26 @@ label{
         </div>
       </nav>
 <script>
-$(document).ready(function(){  
-  $(".opennavbar").click(function(){
-    $(".main-panel").toggleClass('mainPanel_10px');
-    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-    $(".img-fluid").toggleClass("invisible mb-4");
-    $(".side-icon").toggleClass("mb-4");
-    $(".side-content").toggleClass("d-none");
-    $(".logo_span").toggleClass("d-block");
-    $("a").toggleClass("shadow-none");
-    $(".new-padd").toggleClass("padding-none");
-  });
-});
-$( document ).ready(function() {
-    $(".main-panel").toggleClass('mainPanel_10px');
-    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-    $(".img-fluid").toggleClass("invisible mb-4");
-    $(".side-icon").toggleClass("mb-4");
-    $(".side-content").toggleClass("d-none");
-    $(".logo_span").toggleClass("d-block");
-    $("a").toggleClass("shadow-none");
-    $(".new-padd").toggleClass("padding-none");
-});
+// $(document).ready(function(){  
+//   $(".opennavbar").click(function(){
+//     $(".main-panel").toggleClass('mainPanel_10px');
+//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+//     $(".img-fluid").toggleClass("invisible mb-4");
+//     $(".side-icon").toggleClass("mb-4");
+//     $(".side-content").toggleClass("d-none");
+//     $(".logo_span").toggleClass("d-block");
+//     $("a").toggleClass("shadow-none");
+//   });
+// });
+// $( document ).ready(function() {
+//     $(".main-panel").toggleClass('mainPanel_10px');
+//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+//     $(".img-fluid").toggleClass("invisible mb-4");
+//     $(".side-icon").toggleClass("mb-4");
+//     $(".side-content").toggleClass("d-none");
+//     $(".logo_span").toggleClass("d-block");
+//     $("a").toggleClass("shadow-none");
+// });
 </script>
 <div class="content mt-n2 px-0">
 

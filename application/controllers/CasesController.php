@@ -146,7 +146,7 @@ class CasesController extends CI_Controller {
         $coord_id = $_SESSION['user_data'][0]['admin_id'];
         $isp_branch = $this->input->post('isp_branch');
         $assigned_fe = $this->input->post('assigned_fe');
-        $source_branch = $isp_branch;
+        $source_branch = $coord_id;
         if ($coord_id==$isp_branch) {
             $destination_branch="";
         }
