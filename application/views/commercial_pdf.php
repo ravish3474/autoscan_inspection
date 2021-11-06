@@ -46,22 +46,22 @@ table {
   <h2 style="text-decoration: underline;text-align: center;">COMMERCIAL VEHICLES PRE-INSPECTION REPORT</h2>
   <table width="100%" style="width: 100%; margin-left:5px;margin-right: 5px ;">
         <tr>
-            <td width="50%" style="font-size:12px;">Request No: kp-bajaj-2018-001210</td>
-            <td width="50%" align="right" style="font-size:12px;">Ref. No. : 2018-03395147</td>
+            <td width="50%" style="font-size:12px;">Request No: <?=$request_num?></td>
+            <td width="50%" align="right" style="font-size:12px;">Ref. No. : <?=$reference_num?></td>
         </tr>
   </table>
   <div class="table-responsive-sm">   
     <table class="table " style="width: 100%; margin-left:5px;margin-right: 5px;margin-top: 10px;"> 
       <tbody>
         <tr>
-          <td style="width:35%;">Proposer/Customer Name:</td>
-          <td style="width:35%;"><?=$customer_name?></td>
-          <td style="width:35%;">Address:<?=$address?></td>
+          <td style="width:35%;">Proposer/Customer Name: <?=$customer_name?></td>
+          <td style="width:35%;"></td>
+          <td style="width:35%;">Address: <?=$address?></td>
         </tr>
         <tr>
-          <td style="width:35%;">Requested Date:<?=$request_date?></td>
-          <td style="width:35%;">Requested Time:<?=$request_time?></td>
-          <td style="width:35%;">Inspected Date & Time:<?=$isp_date_time?></td>
+          <td style="width:35%;">Requested Date: <?=$request_date?></td>
+          <td style="width:35%;">Requested Time: <?=$request_time?></td>
+          <td style="width:35%;">Inspected Date & Time: <?=$isp_date_time?></td>
         </tr>
       </tbody>
     </table>    

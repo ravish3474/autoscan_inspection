@@ -30,9 +30,15 @@ th{
                                      <li class="<?php
                                      if($this->uri->segment(1)=="executive-assigned-cases")echo "active";
                                      ?>"><a href="<?=base_url('executive-assigned-cases')?>">EXECTIVE ASSIGNED</a></li>
-                                     <li class=""><a href="">CLOSED</a></li>
-                                     <li class=""><a href="">REPORT</a></li>
-                                     <li class=""><a href="">ON HOLD</a></li>
+                                     <li class="<?php
+                                     if($this->uri->segment(1)=="closed-cases")echo "active";
+                                     ?>"><a href="<?=base_url('closed-cases')?>">CLOSED</a></li>
+                                     <li class="<?php
+                                     if($this->uri->segment(1)=="report")echo "active";
+                                     ?>"><a href="<?=base_url('report')?>">REPORT</a></li>
+                                     <li class="<?php
+                                     if($this->uri->segment(1)=="on-hold")echo "active";
+                                     ?>"><a href="<?=base_url('on-hold')?>">ON HOLD</a></li>
                                      <li class=""><a href="">REJECTED</a></li>
                                   </ul>
                                 </div> 

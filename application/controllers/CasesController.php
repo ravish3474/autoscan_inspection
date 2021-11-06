@@ -92,6 +92,150 @@ class CasesController extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
+    public function report(){
+        $this->load->library('pagination'); 
+        $case_status = 3;  
+
+        $coord_id = $_SESSION['user_data'][0]['admin_id'];
+
+        $config['base_url'] = base_url().'closed-cases';        
+
+        $config['total_rows'] = $this->CasesModel->count_all_users($coord_id,$case_status);      
+
+        $config['per_page'] = 5;        
+
+        $config['uri_segment'] = 2;        
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['attributes'] = ['class' => 'page-link'];
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="page-item active"><a href="#" class="page-link">';
+        $config['cur_tag_close'] = '<span class="sr-only">(current)</span></a></li>';
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $this->pagination->initialize($config);        
+
+        $data['links'] = $this->pagination->create_links();        
+
+        $data['cases'] = $this->CasesModel->get_users($config["per_page"], $page,$coord_id,$case_status); 
+
+        //$data['cases'] = $this->CasesModel->fetch_new_cases($coord_id);
+        $this->load->view('layout/header');
+        $this->load->view('cases',$data);
+        $this->load->view('layout/footer');
+    }
+
+    public function on_hold(){
+        $this->load->library('pagination'); 
+        $case_status = 4;  
+
+        $coord_id = $_SESSION['user_data'][0]['admin_id'];
+
+        $config['base_url'] = base_url().'closed-cases';        
+
+        $config['total_rows'] = $this->CasesModel->count_all_users($coord_id,$case_status);      
+
+        $config['per_page'] = 5;        
+
+        $config['uri_segment'] = 2;        
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['attributes'] = ['class' => 'page-link'];
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="page-item active"><a href="#" class="page-link">';
+        $config['cur_tag_close'] = '<span class="sr-only">(current)</span></a></li>';
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $this->pagination->initialize($config);        
+
+        $data['links'] = $this->pagination->create_links();        
+
+        $data['cases'] = $this->CasesModel->get_users($config["per_page"], $page,$coord_id,$case_status); 
+
+        //$data['cases'] = $this->CasesModel->fetch_new_cases($coord_id);
+        $this->load->view('layout/header');
+        $this->load->view('cases',$data);
+        $this->load->view('layout/footer');
+    }
+
+    public function closed_cases(){
+        $this->load->library('pagination'); 
+        $case_status = 2;  
+
+        $coord_id = $_SESSION['user_data'][0]['admin_id'];
+
+        $config['base_url'] = base_url().'closed-cases';        
+
+        $config['total_rows'] = $this->CasesModel->count_all_users($coord_id,$case_status);      
+
+        $config['per_page'] = 5;        
+
+        $config['uri_segment'] = 2;        
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['attributes'] = ['class' => 'page-link'];
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="page-item active"><a href="#" class="page-link">';
+        $config['cur_tag_close'] = '<span class="sr-only">(current)</span></a></li>';
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $this->pagination->initialize($config);        
+
+        $data['links'] = $this->pagination->create_links();        
+
+        $data['cases'] = $this->CasesModel->get_users($config["per_page"], $page,$coord_id,$case_status); 
+
+        //$data['cases'] = $this->CasesModel->fetch_new_cases($coord_id);
+        $this->load->view('layout/header');
+        $this->load->view('cases',$data);
+        $this->load->view('layout/footer');
+    }
+
     public function new_case(){
         $this->load->library('pagination'); 
         $case_status = 0;  

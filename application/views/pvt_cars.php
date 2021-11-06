@@ -1,4 +1,6 @@
 <?php
+  $request_num = "";
+  $reference_num = "";
   $customer_name = "";
   $address = "";
   $request_date = "";
@@ -112,6 +114,8 @@ if(count($qc_data)==0){
   $vehicle_make = $case_data[0]['vehicle_make'];
   $vehicle_model = $case_data[0]['vehicle_model'];
   $qc_remarks = $case_data[0]['remarks'];
+  $request_num = $case_data[0]['ref_no'];
+  $reference_num = $case_data[0]['insurer_ref_no'];
 }
 else{
   $customer_name = $qc_data[0]['customer_name'];
@@ -213,7 +217,8 @@ else{
   $rr_ws_glass_rem = $qc_data[0]['rr_ws_glass_rem'];
   $recomm = $qc_data[0]['recomm'];
   $qc_remarks = $qc_data[0]['qc_remarks'];
-
+  $request_num = $qc_data[0]['request_num'];
+  $reference_num = $qc_data[0]['reference_num'];
 }
 ?>
 
@@ -402,6 +407,8 @@ label{
                                                         }
                                                         ?>" class="form-control" name="fr_panel_rem">
                                                         <input type="hidden" name="case_id" value="<?=base64_decode($case_id)?>">
+                                                        <input type="hidden" name="request_num" value="<?=$request_num?>">
+                                                        <input type="hidden" name="reference_num" value="<?=$reference_num?>">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">

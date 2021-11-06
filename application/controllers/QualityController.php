@@ -11,14 +11,24 @@ class QualityController extends CI_Controller {
     public function qc_commercial(){
         $case_id = $this->input->post('case_id');
         $all_pics = implode(",",$this->input->post('all_pics'));
+        $recomm = $this->input->post('recomm');
+        $case_status = $recomm=="On Hold" ? 4:3;
         unset($_POST['all_pics']);
+        $vehicle_number = $this->input->post('vehicle_num_qc');
+        $pdf_name = $vehicle_number."-".date('Y-m-d').".pdf";
+        $_POST['coordinator_id'] = $_SESSION['user_data'][0]['admin_id'];
+        $_POST['file_name'] = $pdf_name;
         $_POST['all_pics'] = $all_pics;
         $table = 'qc_commercial';
         $table_field_name = 'case_id';
         if($this->CommonModel->check_user($case_id,$table,$table_field_name)){
             $insert = $this->CommonModel->insert_function($table,$_POST);
             if ($insert) {
-                    $this->commercial_pdf($_POST);
+                    $this->commercial_pdf($_POST,$pdf_name);
+                    $table = "cases";
+                    $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                    $condition = array('case_id'=>$case_id);
+                    $update = $this->CommonModel->update_table($table,$data,$condition);
                     die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -30,7 +40,11 @@ class QualityController extends CI_Controller {
         $condition = array('case_id'=>$case_id);
         $update = $this->CommonModel->update_table($table,$_POST,$condition);
             if ($update) {
-                $this->commercial_pdf($_POST);
+                $this->commercial_pdf($_POST,$pdf_name);
+                $table = "cases";
+                $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                $condition = array('case_id'=>$case_id);
+                $update = $this->CommonModel->update_table($table,$data,$condition);
                 die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -42,14 +56,24 @@ class QualityController extends CI_Controller {
     public function qc_two_wheeler(){
         $case_id = $this->input->post('case_id');
         $all_pics = implode(",",$this->input->post('all_pics'));
+        $recomm = $this->input->post('recomm');
+        $case_status = $recomm=="On Hold" ? 4:3;
         unset($_POST['all_pics']);
+        $vehicle_number = $this->input->post('vehicle_num_qc');
+        $pdf_name = $vehicle_number."-".date('Y-m-d').".pdf";
+        $_POST['coordinator_id'] = $_SESSION['user_data'][0]['admin_id'];
+        $_POST['file_name'] = $pdf_name;
         $_POST['all_pics'] = $all_pics;
         $table = 'qc_two_wheeler';
         $table_field_name = 'case_id';
         if($this->CommonModel->check_user($case_id,$table,$table_field_name)){
             $insert = $this->CommonModel->insert_function($table,$_POST);
             if ($insert) {
-                    $this->two_wheel_pdf($_POST);
+                    $this->two_wheel_pdf($_POST,$pdf_name);
+                    $table = "cases";
+                    $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                    $condition = array('case_id'=>$case_id);
+                    $update = $this->CommonModel->update_table($table,$data,$condition);
                     die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -61,7 +85,11 @@ class QualityController extends CI_Controller {
         $condition = array('case_id'=>$case_id);
         $update = $this->CommonModel->update_table($table,$_POST,$condition);
             if ($update) {
-                $this->two_wheel_pdf($_POST);
+                $this->two_wheel_pdf($_POST,$pdf_name);
+                $table = "cases";
+                $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                $condition = array('case_id'=>$case_id);
+                $update = $this->CommonModel->update_table($table,$data,$condition);
                 die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -69,18 +97,27 @@ class QualityController extends CI_Controller {
             }
         }
     }
-
     public function qc_pvt_car(){
         $case_id = $this->input->post('case_id');
         $all_pics = implode(",",$this->input->post('all_pics'));
+        $recomm = $this->input->post('recomm');
+        $case_status = $recomm=="On Hold" ? 4:3;
         unset($_POST['all_pics']);
+        $vehicle_number = $this->input->post('vehicle_num_qc');
+        $pdf_name = $vehicle_number."-".date('Y-m-d').".pdf";
+        $_POST['coordinator_id'] = $_SESSION['user_data'][0]['admin_id'];
+        $_POST['file_name'] = $pdf_name;
         $_POST['all_pics'] = $all_pics;
         $table = 'qc_pvt_cars';
         $table_field_name = 'case_id';
         if($this->CommonModel->check_user($case_id,$table,$table_field_name)){
             $insert = $this->CommonModel->insert_function($table,$_POST);
             if ($insert) {
-                    $this->pvt_pdf($_POST);
+                    $this->pvt_pdf($_POST,$pdf_name);
+                    $table = "cases";
+                    $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                    $condition = array('case_id'=>$case_id);
+                    $update = $this->CommonModel->update_table($table,$data,$condition);
                     die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -92,7 +129,11 @@ class QualityController extends CI_Controller {
         $condition = array('case_id'=>$case_id);
         $update = $this->CommonModel->update_table($table,$_POST,$condition);
             if ($update) {
-                $this->pvt_pdf($_POST);
+                $this->pvt_pdf($_POST,$pdf_name);
+                $table = "cases";
+                $data = array('case_status'=>$case_status,'pdf_name'=>$pdf_name);
+                $condition = array('case_id'=>$case_id);
+                $update = $this->CommonModel->update_table($table,$data,$condition);
                 die(json_encode(array('status'=>'1','msg'=>'Qc Submitted Successfully')));
             }
             else{
@@ -101,8 +142,10 @@ class QualityController extends CI_Controller {
         }
     }
 
-    public function commercial_pdf($data)
+    public function commercial_pdf($data,$pdf_name)
     {
+    $all_pics = $data['all_pics'];
+    $all_pics_array = explode(",",$all_pics);
     $pdf = new \Mpdf\Mpdf([
             'mode' => 'c',
             'margin_top' => 30,
@@ -139,51 +182,31 @@ class QualityController extends CI_Controller {
         $pdf->setAutoTopMargin = 'stretch';
         $pdf->SetDisplayMode('fullpage');
         $html=$this->load->view('commercial_pdf',$data,true);
-        $html1='
-        <div style="padding-top:50px" >
-              <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                </tr>
-            </table>
-            <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-            </div>';
+        $div_open = '<div style="padding-top:50px" >';
+        $div_close = '</div>';
 
-        $pdf_path = "upload/filename.pdf";
+        $ttl_pics = count($all_pics_array);
+        $main_loop = round($ttl_pics/3);
+        $tablets = '';
+
+        for ($i=0; $i < $main_loop; $i++) { 
+            $tablets .= '<table class="img-tbl" style="margin-top:100px">
+                <tr>';
+                $j = $i*3;
+                $z = $j+2;
+                if ($z>=($ttl_pics-1)) {
+                    $z = $ttl_pics-1;
+                }
+                for ($j; $j <= $z; $j++) { 
+                    $tablets .='<td> <img src="'.base_url().'upload/images/'.$all_pics_array[$j].'" height="450" width="500"/>
+                </td>';
+                }
+            $tablets .='</tr>
+            </table>';
+        }
+        $html1 = $div_open.$tablets.$div_close;
+
+        $pdf_path = "upload/".$pdf_name;
         $stylesheet='assets/css/bootstrap.css';
         $pdf->WriteHTML($stylesheet,1);
         $pdf->WriteHTML($html);
@@ -194,8 +217,10 @@ class QualityController extends CI_Controller {
         // $pdf->Output($pdf_path, \Mpdf\Output\Destination::FILE);
     }
 
-    public function pvt_pdf($data)
+    public function pvt_pdf($data,$pdf_name)
     {
+    $all_pics = $data['all_pics'];
+    $all_pics_array = explode(",",$all_pics);
     $pdf = new \Mpdf\Mpdf([
             'mode' => 'c',
             'margin_top' => 26,
@@ -232,50 +257,30 @@ class QualityController extends CI_Controller {
         $pdf->setAutoTopMargin = 'stretch';
         $pdf->SetDisplayMode('fullpage');
         $html=$this->load->view('pvt_pdf',$data,true);
-        $html1='
-        <div style="padding-top:50px" >
-              <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                </tr>
-            </table>
-            <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-            </div>';
-        $pdf_path = "upload/filename.pdf";
+        $div_open = '<div style="padding-top:50px" >';
+        $div_close = '</div>';
+
+        $ttl_pics = count($all_pics_array);
+        $main_loop = round($ttl_pics/3);
+        $tablets = '';
+
+        for ($i=0; $i < $main_loop; $i++) { 
+            $tablets .= '<table class="img-tbl" style="margin-top:100px">
+                <tr>';
+                $j = $i*3;
+                $z = $j+2;
+                if ($z>=($ttl_pics-1)) {
+                    $z = $ttl_pics-1;
+                }
+                for ($j; $j <= $z; $j++) { 
+                    $tablets .='<td> <img src="'.base_url().'upload/images/'.$all_pics_array[$j].'" height="450" width="500"/>
+                </td>';
+                }
+            $tablets .='</tr>
+            </table>';
+        }
+        $html1 = $div_open.$tablets.$div_close;
+        $pdf_path = "upload/".$pdf_name;
         $stylesheet='assets/css/bootstrap.css';
         $pdf->WriteHTML($stylesheet,1);
         $pdf->WriteHTML($html);
@@ -286,8 +291,10 @@ class QualityController extends CI_Controller {
         // $pdf->Output($pdf_path, \Mpdf\Output\Destination::FILE);
     }
 
-    public function two_wheel_pdf($data)
+    public function two_wheel_pdf($data,$pdf_name)
     {
+    $all_pics = $data['all_pics'];
+    $all_pics_array = explode(",",$all_pics);
     $pdf = new \Mpdf\Mpdf([
             'mode' => 'c',
             'margin_top' => 30,
@@ -324,50 +331,30 @@ class QualityController extends CI_Controller {
         $pdf->setAutoTopMargin = 'stretch';
         $pdf->SetDisplayMode('fullpage');
         $html=$this->load->view('two_pdf',$data,true);
-        $html1='
-        <div style="padding-top:50px" >
-              <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="450" width="500"/>
-                </td>
-                </tr>
-            </table>
-            <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-             <table class="img-tbl" style="margin-top:100px">
-                <tr>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                <td> <img src="https://www.autoscan.co.in/uploadFiles/0fa42762-f78f-4a23-8447-479a8461f0c2.jpg" height="400" width="500"/>
-                </td>
-                </tr>
-            </table>
-            </div>';
-        $pdf_path = "upload/filename.pdf";
+        $div_open = '<div style="padding-top:50px" >';
+        $div_close = '</div>';
+
+        $ttl_pics = count($all_pics_array);
+        $main_loop = round($ttl_pics/3);
+        $tablets = '';
+
+        for ($i=0; $i < $main_loop; $i++) { 
+            $tablets .= '<table class="img-tbl" style="margin-top:100px">
+                <tr>';
+                $j = $i*3;
+                $z = $j+2;
+                if ($z>=($ttl_pics-1)) {
+                    $z = $ttl_pics-1;
+                }
+                for ($j; $j <= $z; $j++) { 
+                    $tablets .='<td> <img src="'.base_url().'upload/images/'.$all_pics_array[$j].'" height="450" width="500"/>
+                </td>';
+                }
+            $tablets .='</tr>
+            </table>';
+        }
+        $html1 = $div_open.$tablets.$div_close;
+        $pdf_path = "upload/".$pdf_name;
         $stylesheet='assets/css/bootstrap.css';
         $pdf->WriteHTML($stylesheet,1);
         $pdf->WriteHTML($html);
@@ -452,6 +439,10 @@ class QualityController extends CI_Controller {
         $data = array('case_id'=>$case_id,'all_pics'=>$all_pics,'chasis_pic'=>$chasis_pic);
         $insert = $this->CommonModel->insert_function($table,$data);
         if ($insert) {
+            $table = "cases";
+            $data = array('case_status'=>'2');
+            $condition = array('case_id'=>$case_id);
+            $update = $this->CommonModel->update_table($table,$data,$condition);
             die(json_encode(array('status'=>'1','msg'=>'Uploaded Successfully')));
         }
         else{
