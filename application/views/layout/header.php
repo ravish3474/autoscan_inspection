@@ -152,12 +152,12 @@ label{
       <div class="sidebar-wrapper" id="sidebar-wrapper">
       
         <ul class="nav">
-          <li class="active">
+          <!-- <li class="active">
                         <a class="new-padd" href="<?=base_url('Homecontroller/')?>">
                         <i class="side-icon fa fa-tachometer" aria-hidden="true"></i>
                             <span class="side-content">Home</span>
                         </a>
-                    </li>
+                    </li> -->
                      <li >
                         <a class="new-padd" href="<?=base_url('new-cases')?>">
                         <i class="side-icon fa fa-briefcase"></i>

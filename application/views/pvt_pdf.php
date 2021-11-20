@@ -76,7 +76,7 @@ table {
           <tr>
             <?php
             $style = "";
-            if ($fr_panel_desc!='Good') {
+            if ($fr_panel_desc!='Intact') {
               $style = "style='color:red'";
             }
             ?>
@@ -365,7 +365,7 @@ table {
           <tr>
             <?php
             $style = "";
-            if ($rh_head_lamp_desc!='Open') {
+            if ($rh_head_lamp_desc!='Intact') {
               $style = "style='color:red'";
             }
             ?>
@@ -376,7 +376,7 @@ table {
           <tr>
             <?php
             $style = "";
-            if ($lh_head_lamp_desc!='Good') {
+            if ($lh_head_lamp_desc!='Intact') {
               $style = "style='color:red'";
             }
             ?>

@@ -59,8 +59,8 @@ $fr_footboard_panel_desc = "";
 $fr_footboard_panel_rem = "";
 $fr_wheel_rim_desc = "";
 $fr_wheel_rim_rem = "";
-$spare_wheel_rim_desc = "";
-$spare_wheel_rim_rem = "";
+// $spare_wheel_rim_desc = "";
+// $spare_wheel_rim_rem = "";
 $rh_rear_view_mirror_desc = "";
 $rh_rear_view_mirror_rem = "";
 $lh_rear_view_mirror_desc = "";
@@ -82,10 +82,10 @@ $vehicle_make = "";
 $date_of_reg_qc = "";
 $color_qc = "";
 $odometer_qc = "";
-$fuel_mode_qc = "";
+$fuel_mode_qc = "PETROL";
 $rc_verified_qc = "";
 $recomm = "";
-$qc_remarks = "";
+$qc_remarks = "DAMAGE MARKED AS PER PHOTOGRAPHS";
 $year_of_manufacture_qc = "";
 
 if(count($qc_data)==0){
@@ -100,9 +100,10 @@ if(count($qc_data)==0){
   $vehicle_number = $case_data[0]['vehicle_number'];
   $vehicle_make = $case_data[0]['vehicle_make'];
   $vehicle_model = $case_data[0]['vehicle_model'];
-  $qc_remarks = $case_data[0]['remarks'];
+  $qc_remarks = "DAMAGE MARKED AS PER PHOTOGRAPHS";
   $request_num = $case_data[0]['ref_no'];
   $reference_num = $case_data[0]['insurer_ref_no'];
+  $fuel_mode_qc = "PETROL";
 }
 else{
 $customer_name=$qc_data[0]['customer_name'];
@@ -165,8 +166,8 @@ $fr_footboard_panel_desc = $qc_data[0]['fr_footboard_panel_desc'];
 $fr_footboard_panel_rem = $qc_data[0]['fr_footboard_panel_rem'];
 $fr_wheel_rim_desc = $qc_data[0]['fr_wheel_rim_desc'];
 $fr_wheel_rim_rem = $qc_data[0]['fr_wheel_rim_rem'];
-$spare_wheel_rim_desc = $qc_data[0]['spare_wheel_rim_desc'];
-$spare_wheel_rim_rem = $qc_data[0]['spare_wheel_rim_rem'];
+// $spare_wheel_rim_desc = $qc_data[0]['spare_wheel_rim_desc'];
+// $spare_wheel_rim_rem = $qc_data[0]['spare_wheel_rim_rem'];
 $rh_rear_view_mirror_desc = $qc_data[0]['rh_rear_view_mirror_desc'];
 $rh_rear_view_mirror_rem = $qc_data[0]['rh_rear_view_mirror_rem'];
 $lh_rear_view_mirror_desc = $qc_data[0]['lh_rear_view_mirror_desc'];
@@ -1098,21 +1099,6 @@ label{
                                                           echo $fr_wheel_rim_rem;
                                                         }
                                                         ?>" class="form-control" name="fr_wheel_rim_rem">
-                                                    </div>
-                                               </div>
-                                               <div class="row mx-0 form-group">
-                                                    <label class="col-md-4 pr-0">SPARE WHEEL RIM</label>
-                                                    <div class="col-md-4 pr-0">
-                                                       <input type="text" value="Intact" class="form-control" name="spare_wheel_rim_desc">
-                                                    </div>
-                                                    <div class="col-md-4 pr-0">
-                                                        <input type="text" value="<?php
-                                                        if($spare_wheel_rim_rem==""){
-                                                          echo "N/A";
-                                                        }else{
-                                                          echo $spare_wheel_rim_rem;
-                                                        }
-                                                        ?>" class="form-control" name="spare_wheel_rim_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">

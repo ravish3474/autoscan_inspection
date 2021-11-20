@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Homecontroller/cases';
+$route['default_controller'] = 'LoginController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -112,3 +112,4 @@ $route['add-make-model'] = 'MakeController';
 $route['add-make-model-ajax'] = 'MakeController/add_make_model_ajax';
 $route['manage-make-model'] = 'MakeController/manage_make_model';
 $route['manage-make-model/(:num)'] = 'MakeController/manage_make_model/$1';
+$route['get-order-file'] = 'QualityController/get_order_file';

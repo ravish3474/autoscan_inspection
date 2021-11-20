@@ -179,7 +179,7 @@ table {
               $style = "style='color:red'";
             }
             ?>
-            <td <?=$style?> class="td-1">LH RR PILLAR</td>
+            <td <?=$style?> class="td-1">LH RR PILLAR-A</td>
             <td <?=$style?>><?=$lh_rr_pillar_desc?></td>
             <td <?=$style?>><?=$lh_rr_pillar_rem?></td>
           </tr>
@@ -190,7 +190,7 @@ table {
               $style = "style='color:red'";
             }
             ?>
-            <td <?=$style?> class="td-1">LH RR PANEL</td>
+            <td <?=$style?> class="td-1">LH RR PILLAR</td>
             <td <?=$style?>><?=$lh_rr_panel_desc?></td>
             <td <?=$style?>><?=$lh_rr_panel_rem?></td>
           </tr>
@@ -445,7 +445,7 @@ table {
         <tr>
           <?php
             $style = "";
-            if ($battery_desc!='Intact') {
+            if ($battery_desc!='Working') {
               $style = "style='color:red'";
             }
             ?>
@@ -453,6 +453,17 @@ table {
           <td <?=$style?>><?=$battery_desc?></td>
           <td <?=$style?>><?=$battery_rem?></td>
         </tr>
+        <tr>
+            <?php
+            $style = "";
+            if ($tyre_desc!='Good') {
+              $style = "style='color:red'";
+            }
+            ?>
+            <td class="td-1">TYRE CONDITION</td>
+            <td <?=$style?>><?=$tyre_desc?></td>
+            <td <?=$style?>><?=$tyre_rem?></td>
+          </tr>
         <tr>
           <?php
             $style = "";

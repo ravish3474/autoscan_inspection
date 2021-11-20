@@ -512,4 +512,12 @@ class QualityController extends CI_Controller {
    
    }
 
+   public function get_order_file(){
+    $case_id = $this->input->post('case_id');
+    $table = "cases";
+    $condition = array('case_id'=>$case_id);
+    $data = $this->CommonModel->fetch_data($table,$condition);
+    echo '<iframe src="'.base_url().'upload/'.$data[0]['pdf_name'].'" type=frame&vlink=xx&link=xx&css=xxx&bg=xx&bgcolor=xx marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scorlling=yes width=100% height=600></iframe>';
+   }
+
 }

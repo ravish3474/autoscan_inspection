@@ -349,17 +349,6 @@ table {
             <td <?=$style?>><?=$fr_wheel_rim_desc?></td>
             <td <?=$style?>><?=$fr_wheel_rim_rem?></td>
           </tr>
-           <tr>
-            <?php
-            $style = "";
-            if ($spare_wheel_rim_desc!='Intact') {
-              $style = "style='color:red'";
-            }
-            ?>
-            <td <?=$style?>>SPARE WHEEL RIM</td>
-            <td <?=$style?>><?=$spare_wheel_rim_desc?></td>
-            <td <?=$style?>><?=$spare_wheel_rim_rem?></td>
-          </tr>
           <tr>
             <?php
             $style = "";

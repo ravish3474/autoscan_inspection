@@ -13,7 +13,7 @@ class LoginController extends CI_Controller {
 			$this->load->view('login/index');
 		}
 		else{
-			redirect(base_url());
+			redirect(base_url('new-cases'));
 		}
 	}
 
@@ -25,7 +25,7 @@ class LoginController extends CI_Controller {
     	if ($check_user) {
     		if ($login_as==1) {
     			$this->session->set_userdata('user_data',$check_user);
-    			redirect(base_url());
+    			redirect(base_url('new-cases'));
     		}
     	}
     	else{

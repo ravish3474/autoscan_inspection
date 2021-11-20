@@ -76,7 +76,7 @@
                                                <div class="row mx-0 form-group">
                                                     <label class="col-md-5">EX PRICE</label>
                                                     <div class="col-md-7">
-                                                        <input type="number" name="EX_PRICE" placeholder="Enter EX Price" class="form-control " required="">
+                                                        <input type="number" name="EX_PRICE" placeholder="Enter EX Price" class="form-control ">
                                                     </div>
                                                </div>
 

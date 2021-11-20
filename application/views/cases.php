@@ -92,9 +92,19 @@ th{
                                         <span class="pointer p-1 assign_fe" data-toggle="tooltip" data-placement="top" case_id="<?=$case['case_id']?>" title="Assign FE" fe_id="<?=$case['assigned_fe']?>"><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
                                         <?php
                                         }
+
+                                        if($this->uri->segment(1)=="report" || $this->uri->segment(1)=="on-hold"){
                                         ?>
+
+                                        <span class="pointer p-1 v_pdf" case_id="<?=$case['case_id']?>" data-toggle="tooltip" data-placement="top" title="VIEW/DOWNLOAD PDF" ><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
+
+                                      <?php }else{ ?>
+
                                         <span class="pointer p-1 assign_branch" case_id="<?=$case['case_id']?>" data-toggle="tooltip" data-placement="top" title="Assign to Another Branch" ><img src="https://www.autoscan.co.in/assets/images/team.png"></span>
                                         <span class="pointer p-1 edit_form" data-toggle="tooltip" data-placement="top" title="View/Edit CASE" case_id="<?=$case['case_id']?>"><img src="https://www.autoscan.co.in/assets/images/document.png"></span>
+
+                                      <?php } ?>
+
                                         <span class="pointer p-1" data-toggle="tooltip" data-placement="top" title="Delete Permanently"><img src="https://www.autoscan.co.in/assets/images/trash.png"></span>
                                       </td>
                                     </tr>
@@ -120,6 +130,21 @@ th{
 
 </div>
 </section>
+
+  <div class="modal fade" id="PDFModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="show_pdf">
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="modal fade" id="CoordinatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -298,5 +323,21 @@ $(document).on('click','.quality_check',function(){
     window.location.href=url;
   }
 })
+
+$(document).on("click", ".v_pdf", function () {
+  var case_id = $(this).attr('case_id');
+  
+  $.ajax({  
+    type: "POST",
+    url:"<?=base_url()?>get-order-file" ,
+    data: {
+        case_id:case_id
+    },
+    success: function(data){  
+      $("#show_pdf").html(data);  
+      $("#PDFModal").modal('show');
+    }  
+  });
+});
 </script>
 

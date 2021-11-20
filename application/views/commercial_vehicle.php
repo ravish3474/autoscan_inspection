@@ -87,6 +87,8 @@ $rh_rear_view_mirror_rem = "";
 $chassis_num_qc = "";
 $engine_num_qc = "";
 $date_of_reg_qc = "";
+$tyre_desc = "";
+$tyre_rem = "";
 $year_of_manufacture_qc = "";
 $color_qc = "";
 $odometer_qc = "";
@@ -95,7 +97,7 @@ $rc_verified_qc = "";
 $fr_windshield_glass_desc = "";
 $fr_windshield_glass_rem = "";
 $recomm = "";
-$qc_remarks = "";
+$qc_remarks = "DAMAGE MARKED AS PER PHOTOGRAPHS";
 
 if(count($qc_data)==0){
   $customer_name = $case_data[0]['insured_name'];
@@ -109,7 +111,7 @@ if(count($qc_data)==0){
   $vehicle_number = $case_data[0]['vehicle_number'];
   $vehicle_make = $case_data[0]['vehicle_make'];
   $vehicle_model = $case_data[0]['vehicle_model'];
-  $qc_remarks = $case_data[0]['remarks'];
+  $qc_remarks = "DAMAGE MARKED AS PER PHOTOGRAPHS";
   $request_num = $case_data[0]['ref_no'];
   $reference_num = $case_data[0]['insurer_ref_no'];
 }
@@ -183,6 +185,8 @@ else{
   $wheel_rims_rem = $qc_data[0]['wheel_rims_rem'];
   $battery_desc = $qc_data[0]['battery_desc'];
   $battery_rem = $qc_data[0]['battery_rem'];
+  $tyre_desc = $qc_data[0]['tyre_desc'];
+  $tyre_rem = $qc_data[0]['tyre_rem'];
   $rh_fender_cliding_desc = $qc_data[0]['rh_fender_cliding_desc'];
   $rh_fender_cliding_rem = $qc_data[0]['rh_fender_cliding_rem'];
   $lh_fender_cliding_desc = $qc_data[0]['lh_fender_cliding_desc'];
@@ -476,10 +480,15 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                             <option <?php 
-                                                            if ($rh_pillar_front_a_desc=="Damage") {
+                                                            if ($rh_pillar_front_a_desc=="Dented") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($rh_pillar_front_a_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -590,10 +599,15 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                            <option <?php 
-                                                            if ($rh_rr_pillar_desc=="Damage") {
+                                                            if ($rh_rr_pillar_desc=="Dented") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($rh_rr_pillar_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -633,7 +647,7 @@ label{
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
-                                                    <label class="col-md-4 pr-0">LH RR PILLAR</label>
+                                                    <label class="col-md-4 pr-0">LH RR PILLAR-A</label>
                                                     <div class="col-md-4 pr-0">
                                                        <select name="lh_rr_pillar_desc" class="form-control">
                                                             <option value="Intact" <?php
@@ -642,10 +656,15 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                             <option <?php 
-                                                            if ($lh_rr_pillar_desc=="Damage") {
+                                                            if ($lh_rr_pillar_desc=="Dented") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($lh_rr_pillar_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -659,7 +678,7 @@ label{
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
-                                                    <label class="col-md-4 pr-0">LH RR PANEL</label>
+                                                    <label class="col-md-4 pr-0">LH RR PILLAR</label>
                                                     <div class="col-md-4 pr-0">
                                                        <select name="lh_rr_panel_desc" class="form-control">
                                                             <option value="Intact" <?php
@@ -672,6 +691,11 @@ label{
                                                               echo "selected";
                                                             }
                                                             ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($lh_rr_panel_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -817,6 +841,11 @@ label{
                                                               echo "selected";
                                                             }
                                                             ?> value="Broken" >Broken</option>
+                                                            <option <?php 
+                                                            if ($fr_show_grill_desc=="Missing") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Missing" >Missing</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1019,6 +1048,11 @@ label{
                                                               echo "selected";
                                                             }
                                                             ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($rh_body_wing_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1045,6 +1079,11 @@ label{
                                                               echo "selected";
                                                             }
                                                             ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($lh_body_wing_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1132,10 +1171,15 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                             <option <?php 
-                                                            if ($instrument_panel_desc=="Damage") {
+                                                            if ($instrument_panel_desc=="Missing") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Missing" >Missing</option>
+                                                            <option <?php 
+                                                            if ($instrument_panel_desc=="Broken") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Broken" >Broken</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1184,10 +1228,15 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                             <option <?php 
-                                                            if ($diesel_tank_desc=="Damage") {
+                                                            if ($diesel_tank_desc=="Dented") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($diesel_tank_desc=="Scratch") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Scratch" >Scratch</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1210,10 +1259,20 @@ label{
                                                             }
                                                             ?>>Intact</option>
                                                             <option <?php 
-                                                            if ($silensor_assly_desc=="Damage") {
+                                                            if ($silensor_assly_desc=="Broken") {
                                                               echo "selected";
                                                             }
-                                                            ?> value="Damage" >Damage</option>
+                                                            ?> value="Broken" >Broken</option>
+                                                            <option <?php 
+                                                            if ($silensor_assly_desc=="Dented") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Dented" >Dented</option>
+                                                            <option <?php 
+                                                            if ($silensor_assly_desc=="Missing") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Missing" >Missing</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 pr-0">
@@ -1256,11 +1315,16 @@ label{
                                                     <label class="col-md-4 pr-0">BATTERY</label>
                                                     <div class="col-md-4 pr-0">
                                                        <select name="battery_desc" class="form-control">
-                                                            <option value="Intact" <?php
-                                                            if ($battery_desc=="" || $battery_desc=="Intact") {
+                                                            <option value="Working" <?php
+                                                            if ($battery_desc=="" || $battery_desc=="Working") {
                                                              echo "selected";
                                                             }
-                                                            ?>>Intact</option>
+                                                            ?>>Working</option>
+                                                            <option <?php 
+                                                            if ($battery_desc=="Not Working") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Not Working" >Not Working</option>
                                                             <option <?php 
                                                             if ($battery_desc=="Missing") {
                                                               echo "selected";
@@ -1276,6 +1340,42 @@ label{
                                                           echo $battery_rem;
                                                         }
                                                         ?>" class="form-control" name="battery_rem">
+                                                    </div>
+                                               </div>
+                                               <div class="row mx-0 form-group">
+                                                    <label class="col-md-4 pr-0">TYRE CONDITION</label>
+                                                    <div class="col-md-4 pr-0">
+                                                       <select name="tyre_desc" class="form-control">
+                                                            <option value="Good" <?php
+                                                            if ($tyre_desc=="" || $tyre_desc=="Good") {
+                                                             echo "selected";
+                                                            }
+                                                            ?>>Good</option>
+                                                            <option <?php 
+                                                            if ($tyre_desc=="Average") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Average" >Average</option>
+                                                            <option <?php 
+                                                            if ($tyre_desc=="Poor") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Poor" >Poor</option>
+                                                            <option <?php 
+                                                            if ($tyre_desc=="Missing") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Missing" >Missing</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 pr-0">
+                                                        <input type="text" value="<?php
+                                                        if($tyre_rem==""){
+                                                          echo "N/A";
+                                                        }else{
+                                                          echo $tyre_rem;
+                                                        }
+                                                        ?>" class="form-control" name="tyre_rem">
                                                     </div>
                                                </div>
                                                <div class="row mx-0 form-group">
@@ -1318,6 +1418,11 @@ label{
                                                              echo "selected";
                                                             }
                                                             ?>>Intact</option>
+                                                            <option <?php 
+                                                            if ($lh_fender_cliding_desc=="Damage") {
+                                                              echo "selected";
+                                                            }
+                                                            ?> value="Damage" >Damage</option>
                                                             <option <?php 
                                                             if ($lh_fender_cliding_desc=="Missing") {
                                                               echo "selected";
