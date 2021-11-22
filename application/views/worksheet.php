@@ -53,6 +53,12 @@
     background:#eee;
     visibility:visible;
 }
+table {
+  border-spacing: 5px !important;
+}
+th, td {
+  padding: 15px !important;
+}
 .clone thead, .clone tfoot{background:transparent;}
     </style>
 <section class="content">

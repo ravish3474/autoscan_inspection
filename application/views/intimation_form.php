@@ -29,7 +29,7 @@
                                             <div class="col-md-6 d-flex">                                            
                                                 <div class="form-line">
                                                     <input type="time" name="request_time" value="<?php $date = date("H:i", strtotime(date('Y-m-d H:i:s'))); echo "$date"; ?>" class="timepicker form-control" >
-                                                </div> <span> ( 24Hr Format )</span>
+                                                </div> <span class="m-auto"> ( 24Hr Format )</span>
                                             </div>
                                      </div>
                                    </div>
@@ -150,13 +150,13 @@
                                                 <label class="col-md-6">Payment Method <sup class="text-danger">*</sup></label>
                                                 <div class="col-md-6">
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method" value="CASH" checked>CASH</label>
+                                                        <label><input class="mr-2" type="radio" name="payment_method" value="CASH" checked>CASH</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method" value="CREDIT CARD">CREDIT CARD</label>
+                                                        <label><input class="mr-2" type="radio" name="payment_method" value="CREDIT CARD">CREDIT CARD</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="payment_method" value="COMPLIMENTARY">COMPLIMENTARY</label>
+                                                        <label><input class="mr-2" type="radio" name="payment_method" value="COMPLIMENTARY">COMPLIMENTARY</label>
                                                      </div>
                                                 </div>
                                            </div>
@@ -235,7 +235,7 @@
                                             <div class="col-md-6 d-flex">                                            
                                                 <div class="form-line">
                                                     <input type="time" class="timepicker form-control" name="appoint_time" >
-                                                </div> <span> ( 24Hr Format )</span>
+                                                </div> <span class="m-auto"> ( 24Hr Format )</span>
                                             </div>
                                            </div>
                                    </div>
@@ -271,22 +271,22 @@
                                                 <label class="col-md-5">PreInspection Reason</label>
                                                   <div class="col-md-7">
                                                     <div class="radio">
-                                                        <label><input type="radio" name="reason" value="Breaking Case < 90 Days" checked>Breaking Case < 90 Days</label>
+                                                        <label><input class="mr-2" type="radio" name="reason" value="Breaking Case < 90 Days" checked>Breaking Case < 90 Days</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" name="reason" value="Breaking Case > 90 Days">Breaking Case > 90 Days</label>
+                                                        <label><input class="mr-2" type="radio" name="reason" value="Breaking Case > 90 Days">Breaking Case > 90 Days</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <label><input type="radio" value="RollOver" name="reason">RollOver</label>
+                                                        <label><input class="mr-2" type="radio" value="RollOver" name="reason">RollOver</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input type="radio" value="Renewal" name="reason">Renewal</label>
+                                                        <label><input class="mr-2" type="radio" value="Renewal" name="reason">Renewal</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input type="radio" name="reason" value="Transfer Case">Transfer Case</label>
+                                                        <label><input class="mr-2" type="radio" name="reason" value="Transfer Case">Transfer Case</label>
                                                      </div>
                                                      <div class="radio">
-                                                        <label><input value="CNG Endorsment" type="radio" name="reason">CNG Endorsment</label>
+                                                        <label><input class="mr-2" value="CNG Endorsment" type="radio" name="reason">CNG Endorsment</label>
                                                      </div>
                                                 </div>
                                            </div>

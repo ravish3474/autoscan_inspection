@@ -141,6 +141,20 @@ label{
     position: relative;
     visibility: unset;
 }
+.sidebar .nav li > a {
+    font-weight: bold;
+    display: block;
+    line-height: 2.4rem;
+    height: 2.4rem;
+    padding: 5px;
+    position: relative;
+    position: relative;
+    border-radius: 0.25rem;
+    color: #343a40;
+    white-space: nowrap;
+    transition: all .2s;
+  
+}
   </style>
 <body>
   <div class="wrapper ">
@@ -172,7 +186,7 @@ label{
                     </li>
                     <li>
                         <a href="<?=base_url('manage-field-executive')?>">
-                        <i class="side-icon fa fa-user"></i>
+                        <i class="side-icon fa fa-users"></i>
                             <span class="side-content">Manage FE</span>
                         </a>
                     </li>
@@ -188,15 +202,12 @@ label{
                             <span class="side-content">Intimation Form</span>
                         </a>
                     </li>
-                   
-                   
-                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                        <i class='side-icon fa fa-building'></i>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class='side-icon fa fa-building'></i>
                             <span class="side-content">Manage Companies</span>
                         </a>
-                        <ul class="ml-menu list-unstyled">
-                            <li class="text-left pl-5">
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                             <li class="text-left pl-5">
                                 <a href="<?=base_url('insurance-companies')?>"><span class="side-content">Add Insurance Company</span></a>
                             </li>
                             <li  class="text-left pl-5">
@@ -207,14 +218,11 @@ label{
                             </li>
                         </ul>
                     </li>
-
-
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                        <i class='side-icon fa fa-building'></i>
+                     <li>
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">  <i class='side-icon fa fa-car'></i>
                             <span class="side-content">Manage Make/Model</span>
                         </a>
-                        <ul class="ml-menu list-unstyled">
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
                             <li class="text-left pl-5">
                                 <a href="<?=base_url('add-make-model')?>"><span class="side-content">Add Make/Model</span></a>
                             </li>
@@ -226,8 +234,7 @@ label{
                             </li>
                         </ul>
                     </li>
-                   
-                     <li>
+                    <li>
                         <a href="<?=base_url('Homecontroller/create_task')?>">
                         <i class="side-icon fa fa-lock"></i>
                             <span class="side-content">Password</span>
@@ -281,7 +288,7 @@ label{
                     <a class="dropdown-item" href=""
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                   Logout
+                   <i class="side-icon fa fa-sign-out" aria-hidden="true"></i>Logout
                     </a>
                     <form id="logout-form" action="" method="POST" style="display: none;">
                    
@@ -312,6 +319,17 @@ label{
 //     $(".side-content").toggleClass("d-none");
 //     $(".logo_span").toggleClass("d-block");
 //     $("a").toggleClass("shadow-none");
+// });
+// $(document).ready(function(){  
+//   $(".sidebar").hover(function(){
+//     $(".main-panel").toggleClass('mainPanel_10px');
+//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+//     $(".img-fluid").toggleClass("invisible mb-4");
+//     $(".side-icon").toggleClass("mb-4");
+//     $(".side-content").toggleClass("d-none");
+//     $(".logo_span").toggleClass("d-block");
+//     $("a").toggleClass("shadow-none");
+//   });
 // });
 </script>
 <div class="content mt-n2 px-0">
