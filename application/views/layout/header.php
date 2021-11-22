@@ -285,9 +285,7 @@ label{
                     <i class="fa fa-user users_single-02"></i> 
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href=""
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+                    <a class="dropdown-item" href="<?=base_url('logout')?>">
                    <i class="side-icon fa fa-sign-out" aria-hidden="true"></i>Logout
                     </a>
                     <form id="logout-form" action="" method="POST" style="display: none;">
