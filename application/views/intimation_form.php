@@ -2,7 +2,7 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Select -->
-            <div class="row clearfix mt-4">
+            <div class="row clearfix mt-2">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                     <div class="header text-center">

@@ -203,7 +203,7 @@ label{
                         </a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class='side-icon fa fa-building'></i>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class=" new-toggle"> <i class='side-icon fa fa-building'></i>
                             <span class="side-content">Manage Companies</span>
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -219,7 +219,7 @@ label{
                         </ul>
                     </li>
                      <li>
-                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">  <i class='side-icon fa fa-car'></i>
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="new-toggle">  <i class='side-icon fa fa-car'></i>
                             <span class="side-content">Manage Make/Model</span>
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu2">
@@ -288,9 +288,6 @@ label{
                     <a class="dropdown-item" href="<?=base_url('logout')?>">
                    <i class="side-icon fa fa-sign-out" aria-hidden="true"></i>Logout
                     </a>
-                    <form id="logout-form" action="" method="POST" style="display: none;">
-                   
-                    </form>
                   </div>
                 </li>
             </ul>
@@ -298,39 +295,38 @@ label{
         </div>
       </nav>
 <script>
-// $(document).ready(function(){  
-//   $(".opennavbar").click(function(){
-//     $(".main-panel").toggleClass('mainPanel_10px');
-//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-//     $(".img-fluid").toggleClass("invisible mb-4");
-//     $(".side-icon").toggleClass("mb-4");
-//     $(".side-content").toggleClass("d-none");
-//     $(".logo_span").toggleClass("d-block");
-//     $("a").toggleClass("shadow-none");
-//   });
-// });
-// $( document ).ready(function() {
-//     $(".main-panel").toggleClass('mainPanel_10px');
-//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-//     $(".img-fluid").toggleClass("invisible mb-4");
-//     $(".side-icon").toggleClass("mb-4");
-//     $(".side-content").toggleClass("d-none");
-//     $(".logo_span").toggleClass("d-block");
-//     $("a").toggleClass("shadow-none");
-// });
-// $(document).ready(function(){  
-//   $(".sidebar").hover(function(){
-//     $(".main-panel").toggleClass('mainPanel_10px');
-//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-//     $(".img-fluid").toggleClass("invisible mb-4");
-//     $(".side-icon").toggleClass("mb-4");
-//     $(".side-content").toggleClass("d-none");
-//     $(".logo_span").toggleClass("d-block");
-//     $("a").toggleClass("shadow-none");
-//   });
-// });
+$(document).ready(function(){  
+  $(".opennavbar").click(function(){
+    $(".new-toggle").toggleClass('dropdown-toggle');
+    $(".main-panel").toggleClass('mainPanel_10px');
+    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+    $(".img-fluid").toggleClass("invisible mb-4");
+    $(".side-icon").toggleClass("mb-4");
+    $(".side-content").toggleClass("d-none");
+    $(".logo_span").toggleClass("d-block");
+    $("a").toggleClass("shadow-none");
+  });
+});
+$( document ).ready(function() {
+    $(".main-panel").toggleClass('mainPanel_10px');
+    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+    $(".img-fluid").toggleClass("invisible mb-4");
+    $(".side-icon").toggleClass("mb-4");
+    $(".side-content").toggleClass("d-none");
+    $(".logo_span").toggleClass("d-block");
+    $("a").toggleClass("shadow-none");
+});
+$(document).ready(function(){  
+  $(".sidebar").hover(function(){
+    $(".new-toggle").toggleClass('dropdown-toggle');
+    $(".main-panel").toggleClass('mainPanel_10px');
+    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+    $(".img-fluid").toggleClass("invisible mb-4");
+    $(".side-icon").toggleClass("mb-4");
+    $(".side-content").toggleClass("d-none");
+    $(".logo_span").toggleClass("d-block");
+    $("a").toggleClass("shadow-none");
+  });
+});
 </script>
-<div class="content mt-n2 px-0">
-
-     
-      
+<div class="content mt-0 px-0">

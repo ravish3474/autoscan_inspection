@@ -11,7 +11,7 @@ th{
 }
 </style>
 
-   <section class="content mt-4">
+   <section class="content mt-2">
    
         <div class="container-fluid">
             
