@@ -268,7 +268,7 @@ label{
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
-          <button class="openbtn opennavbar" >☰</button>  
+         <!--  <button class="openbtn opennavbar" >☰</button>   -->
           <div class="collapse navbar-collapse " id="navigation">
           <ul class="navbar-nav list-unstyled m-0 main_nav">
                  <li class="active"><a href="">PreInspection</a></li>
@@ -295,18 +295,18 @@ label{
         </div>
       </nav>
 <script>
-$(document).ready(function(){  
-  $(".opennavbar").click(function(){
-    $(".new-toggle").toggleClass('dropdown-toggle');
-    $(".main-panel").toggleClass('mainPanel_10px');
-    $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
-    $(".img-fluid").toggleClass("invisible mb-4");
-    $(".side-icon").toggleClass("mb-4");
-    $(".side-content").toggleClass("d-none");
-    $(".logo_span").toggleClass("d-block");
-    $("a").toggleClass("shadow-none");
-  });
-});
+// $(document).ready(function(){  
+//   $(".opennavbar").click(function(){
+//     $(".new-toggle").toggleClass('dropdown-toggle');
+//     $(".main-panel").toggleClass('mainPanel_10px');
+//     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
+//     $(".img-fluid").toggleClass("invisible mb-4");
+//     $(".side-icon").toggleClass("mb-4");
+//     $(".side-content").toggleClass("d-none");
+//     $(".logo_span").toggleClass("d-block");
+//     $("a").toggleClass("shadow-none");
+//   });
+// });
 $( document ).ready(function() {
     $(".main-panel").toggleClass('mainPanel_10px');
     $(".sidebar,.sidebar-wrapper").toggleClass('sidebar_10');
