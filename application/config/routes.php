@@ -113,3 +113,12 @@ $route['add-make-model-ajax'] = 'MakeController/add_make_model_ajax';
 $route['manage-make-model'] = 'MakeController/manage_make_model';
 $route['manage-make-model/(:num)'] = 'MakeController/manage_make_model/$1';
 $route['get-order-file'] = 'QualityController/get_order_file';
+
+//Android APIs
+$route['android/fe-login'] = 'ApiController/fe_login';
+$route['android/fe-landing'] = 'ApiController/fe_landing';
+$route['android/fe-task-list'] = 'ApiController/fe_task_list';
+$route['android/upload/multipleFiles'] = 'ApiController/upload_pics';
+$route['android/agent-login'] = 'ApiController/agent_login';
+$route['android/self-inspection'] = 'ApiController/self_inspection';
+$route['android/self-inspection/view-cases'] = 'ApiController/view_cases';

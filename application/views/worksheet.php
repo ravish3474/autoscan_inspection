@@ -105,7 +105,7 @@ th, td {
                     <?php
                     foreach ($fields as $field) {
                     $assigned_fe = $field['fe_id'];
-                    $sql ="SELECT * FROM cases WHERE assigned_fe='$assigned_fe'";
+                    $sql ="SELECT * FROM cases WHERE assigned_fe='$assigned_fe' AND case_status=1";
                     $query = $this->db->query($sql);
                     ?>
                     <tr>

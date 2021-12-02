@@ -32,6 +32,16 @@ class CommonModel extends CI_Model{
 		return $query;
 	}
 
+	public function fetch_data_join_double_api($table,$table1="",$condition1="",$table2="",$condition2,$where){
+		$this->db->select('*');
+		$this->db->from($table);
+		$this->db->join($table1,$condition1);
+		$this->db->join($table2,$condition2);
+		$this->db->where($where);
+		$query = $this->db->get()->result_array();
+		return $query;
+	}
+
 	public function insert_function($table,$data){ // insert into database
           if($this->db->insert($table, $data)){
           	return true;
